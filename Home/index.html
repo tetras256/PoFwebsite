@@ -1,0 +1,683 @@
+<!-- 393を練習風景全動画保管場所に変更ゆき6/27  -->
+ <!-- 400~414の動画ファイル読み込み部分を削除して、408~433まで最新10動画が表示されるよう変更jsから動画が流れます6/28  -->
+ <!-- 548～559のコードを削除するとチャンピオン一覧の工事中が消えてページに飛べるようになります tetras256  -->
+  
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HNS official</title>
+
+  <style>
+
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+     html, body {
+    height: 100%;
+    overflow-x: hidden;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: #000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #111;
+    }
+
+    header nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+    }
+    
+     .hero iframe {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 120vw;  /* ← 横幅を画面より広く */
+     height: 67.5vw; /* 120vw × 9 ÷ 16 = 67.5vw で16:9比率 */
+     transform: translate(-50%, -50%);
+     border: none;
+     pointer-events: none;
+     z-index: -1;
+    }
+
+    .hero .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+
+    .hero .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .hero .text h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .hero .text p {
+      font-size: 1.2rem;
+    }
+
+    /* ↓ 以下は追加セクションのためのCSSのまま残しています（省略可能） */
+    .section {
+      padding: 60px 20px;
+    }
+
+    .teams {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .role-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .role-box {
+      background: #1e1e1e;
+      padding: 45px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .role-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00bfff;
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      opacity: 1;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 8px;
+    }
+
+    .slide-item {
+      min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-name {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+    footer {
+      background: #111;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #777;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .flow-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+
+    .flow-track {
+      display: flex;
+      gap: 30px;
+      animation: scroll-flow 70s linear infinite;
+      align-items: flex-start;
+      width: max-content;
+    }
+
+    .flow-track img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .flow-track a:hover img {
+      transform: scale(1.1);
+    }
+
+    .flow-container:hover .flow-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-flow {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .champion-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .champion-card {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .champion-card img {
+      height: 150px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .champion-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00bfff;
+    }
+
+    header nav a:hover {
+      color: #00bfff;
+      text-shadow: 0 0 8px #00bfff;
+      transition: all 0.3s ease;
+    }
+
+    .champion-link-title {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .champion-link-title a {
+      color: #dfb66b;
+      text-decoration: none;
+      font-size: 3.5rem;
+    }
+
+    .champion-link-title a:hover {
+      color: #776d3f;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+ <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+  <img src="Hnslogo.png" alt="Logo" style="height:80px;">
+  <a href="../選手募集/募集ページ.html" style="font-size: 24px; font-weight: bold; color: white; text-decoration: none;">
+    HANDS Esports
+  </a>
+</div>
+  <nav>
+    <a href="../選手募集/募集ページ.html">HNS選手募集</a>
+    <a href="../応募フォーム/apply.html">応募フォーム</a>
+    <a href="../チャンピオン一覧/champions.html">チャンピオン一覧</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <iframe
+    title="背景動画"
+    src="https://www.youtube.com/embed/Ju1eOMlwaDc?autoplay=1&mute=1&loop=1&playlist=Ju1eOMlwaDc&controls=0&modestbranding=1&showinfo=0&rel=0"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+  ></iframe>
+
+  <div class="overlay"></div>
+
+  <div class="text">
+    <h1>“勝利は、繋がる手の中に”</h1>
+    <p>その一手が、勝利を掴む！</p>
+  </div>
+</section>
+
+<section class="section teams">
+
+<h2 class="team-role-title">
+  <a href="roles.html">Team Roles</a>
+</h2>
+
+  <div class="role-container">
+
+    <!-- TOP -->
+    <div class="role-box">
+      <h3>TOP</h3>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide-item">
+          <img src="lesser.png" alt="Top 1">
+          <p class="player-name">Lesser</p>
+         <!--<img src="" alt="Top 2">
+         <img src="top3.jpg" alt="Top 3"> --> <!-- ←ここ：各ロールの画像（好きに変更可） -->
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUNGLE -->
+    <div class="role-box">
+      <h3>JUNGLE</h3>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide-item">
+          <img src="ekkusu.png" alt="Jungle 1">
+          <p class="player-name">X</p>
+          </div>
+          <div class="slide-item">
+          <img src="skinny.png" alt="Jungle 2">
+          <p class="player-name">Skinny</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MID -->
+    <div class="role-box">
+      <h3>MID</h3>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide-item">
+          <img src="tetras.png" alt="Mid 1">
+          <p class="player-name">Tetras</p>
+          </div>
+          <div class="slide-item">
+          <img src="rito.png" alt="Mid 2">
+          <p class="player-name">Rito</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADC -->
+    <div class="role-box">
+      <h3>ADC</h3>
+      <div class="slider">
+        <div class="slides">
+           <div class="slide-item">
+          <img src="hasiru.png" alt="ADC 1">
+          <p class="player-name">Hashiru</p>
+          </div>
+           <div class="slide-item">
+          <img src="yuki.png" alt="ADC 2">
+          <p class="player-name">Yuki</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="role-box">
+      <h3>SUPPORT</h3>
+      <div class="slider">
+        <div class="slides">
+           <div class="slide-item">
+          <img src="nite.png" alt="Support 1">
+          <p class="player-name">Nite</p>
+          </div>
+           <div class="slide-item">
+          <img src="inaka.png" alt="Support 2">
+          <p class="player-name">Inaka</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="overflow: hidden; background-color: #0a1428;">
+  <h2 class="champion-link-title">
+   <a href="champions.html">チャンピオン解説</ a>
+  </h2>
+  <div class="flow-container">
+    <div class="flow-track">
+
+      <!-- 各画像をリンクで囲む -->
+      <a href="champions/azir.html">
+        <img src="../チャンピオン一覧/champion_picture/Azir_0.jpg" alt="Azir">
+      </a>
+      <a href="champions/leesin.html">
+        <img src="../チャンピオン一覧/champion_picture/Leesin_0.jpg" alt="Lee Sin">
+      </a>
+      <a href="champions/jayce.html">
+        <img src="../チャンピオン一覧/champion_picture/Jayce_0.jpg" alt="Jayce">
+      </a>
+      <a href="champions/akali.html">
+        <img src="../チャンピオン一覧/champion_picture/Akali_0.jpg" alt="Akali">
+      </a>
+      <a href="champions/renekton.html">
+        <img src="../チャンピオン一覧/champion_picture/Renekton_0.jpg" alt="Renekton">
+      </a>
+      <a href="champions/thresh.html">
+        <img src="../チャンピオン一覧/champion_picture/Thresh_0.jpg" alt="Thresh">
+      </a>
+      <a href="champions/jinx.html">
+        <img src="../チャンピオン一覧/champion_picture/Jinx_0.jpg" alt="Jinx">
+      </a>
+      <a href="champions/nautilus.html">
+        <img src="../チャンピオン一覧/champion_picture/Nautilus_0.jpg" alt="Nautilus">
+      </a>
+      <a href="champions/nidalee.html">
+        <img src="../チャンピオン一覧/champion_picture/Nidalee_0.jpg" alt="Nidalee">
+      </a>
+      <a href="champions/lucian.html">
+        <img src="../チャンピオン一覧/champion_picture/Lucian_0.jpg" alt="Lucian">
+      </a>
+
+      <!-- ループ用に再表示（同じリンクでOK） -->
+      <a href="champions/azir.html">
+        <img src="../チャンピオン一覧/champion_picture/Azir_0.jpg" alt="Azir">
+      </a>
+      <a href="champions/leesin.html">
+        <img src="../チャンピオン一覧/champion_picture/Leesin_0.jpg" alt="Lee Sin">
+      </a>
+      <a href="champions/jayce.html">
+        <img src="../チャンピオン一覧/champion_picture/Jayce_0.jpg" alt="Jayce">
+      </a>
+      <a href="champions/akali.html">
+        <img src="../チャンピオン一覧/champion_picture/Akali_0.jpg" alt="Akali">
+      </a>
+      <a href="champions/renekton.html">
+        <img src="../チャンピオン一覧/champion_picture/Renekton_0.jpg" alt="Renekton">
+      </a>
+      <a href="champions/thresh.html">
+        <img src="../チャンピオン一覧/champion_picture/Thresh_0.jpg" alt="Thresh">
+      </a>
+      <a href="champions/jinx.html">
+        <img src="../チャンピオン一覧/champion_picture/Jinx_0.jpg" alt="Jinx">
+      </a>
+      <a href="champions/nautilus.html">
+        <img src="../チャンピオン一覧/champion_picture/Nautilus_0.jpg" alt="Nautilus">
+      </a>
+      <a href="champions/nidalee.html">
+        <img src="../チャンピオン一覧/champion_picture/Nidalee_0.jpg" alt="Nidalee">
+      </a>
+      <a href="champions/lucian.html">
+        <img src="../チャンピオン一覧/champion_picture/Lucian_0.jpg" alt="Lucian">
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sliders = document.querySelectorAll('.slider');
+
+    sliders.forEach((slider) => {
+      const slides = slider.querySelector('.slides');
+      const images = slides.querySelectorAll('img');
+      const total = images.length;
+      let index = 0;
+
+      const delay = Math.random() * 3000; // ←ここ：スライド開始のランダム遅延
+
+      setTimeout(() => {
+        setInterval(() => {
+          slides.style.opacity = '0'; // ←ここ：フェードアウト開始
+
+          setTimeout(() => {
+            index = (index + 1) % total;
+            slides.style.transform = `translateX(-${index * 100}%)`; // ←ここ：スライド移動
+            slides.style.opacity = '1'; // ←ここ：フェードイン
+          }, 200); // ←ここ：ブリンク間隔（速さ）
+        }, 5000); // ←ここ：切り替え間隔（秒数）
+      }, delay);
+    });
+  });
+</script>
+
+<!-- SwiperのCSS読み込み -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<section class="section" style="overflow: hidden; background-color: #0a1428;">
+  <!-- タイトルの見た目をチャンピオン解説と統一 -->
+  <h2 class="champion-link-title">
+    <a href="練習風景全動画保管場所.html">練習風景</a>
+  </h2>
+
+  <!-- Swiper本体 -->
+  <div class="swiper practiceSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="youtube-container">
+          <iframe src="https://www.youtube.com/embed/EtLLVEaUaTc?autoplay=1&mute=1" title="YouTube video 1" frameborder="0"
+  title="YouTube video" frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="youtube-container">
+          <iframe src="https://www.youtube.com/embed/EtLLVEaUaTc?autoplay=1&mute=1" title="YouTube video 2" frameborder="0" title="YouTube video 2" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="youtube-container">
+          <iframe src="https://www.youtube.com/embed/9K1Rov_wLu4?autoplay=1&mute=1" title="YouTube video 3" frameborder="0" title="YouTube video 3" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="youtube-container">
+          <iframe src="https://www.youtube.com/embed/fOrYN9JkG1g?autoplay=1&mute=1" title="YouTube video 4" frameborder="0" title="YouTube video 4" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="youtube-container">
+          <iframe src="https://www.youtube.com/embed/fOrYN9JkG1g?autoplay=1&mute=1" title="YouTube video 5" frameborder="0" title="YouTube video 5" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- ナビゲーション矢印 -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- SwiperのJS読み込み -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".practiceSwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 50,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+<style>
+  .swiper.practiceSwiper {
+    width: 100%;
+    padding-bottom: 60px;
+    display: flex;
+  justify-content: flex-end;
+  }
+
+  .practiceSwiper .swiper-slide {
+    width: 300px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .practiceSwiper .swiper-slide iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #ffe25f;
+  }
+
+  .youtube-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.team-role-title {
+  text-align: center;
+  margin: 0 auto 30px auto;
+  font-size: 4.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.team-role-title a {
+  color: #dfc327ea;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.team-role-title a:hover {
+  color: #00bfff;
+  text-shadow: 0 0 8px #00bfff;
+}
+</style>
+
+<footer>
+
+  <p>© 2025 HNS Esports Co. ALL RIGHTS RESERVED.</p> <!-- ←ここ：著作権表記 -->
+  <div>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">Contact</a> <!-- ←ここ：リンク先 -->
+  </div>
+</footer>
+
+<script>
+  // チャンピオンリンクを一時的に工事中ページに差し替える
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('.flow-track a');
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault(); // 元のリンクをキャンセル
+        window.location.href = '../construction.html'; // 工事中ページへリダイレクト
+      });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const sliders = document.querySelectorAll('.slider');
+
+  sliders.forEach((slider) => {
+    const slides = slider.querySelector('.slides');
+    const items = slides.querySelectorAll('.slide-item');
+    const total = items.length;
+
+    let index = 0;
+
+    const delay = Math.random() * 3000;
+
+    setTimeout(() => {
+      setInterval(() => {
+        slides.style.opacity = '0';
+
+        setTimeout(() => {
+          index = (index + 1) % total;
+          slides.style.transform = `translateX(-${index * 100}%)`;
+          slides.style.opacity = '1';
+        }, 200);
+      }, 5000);
+    }, delay);
+  });
+});
+
+</script>
+</body>
+</html>

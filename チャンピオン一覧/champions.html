@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>チャンピオン一覧 - Hnds</title>
+  <style>
+    body {
+      background-color: #002730;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffe7;
+    }
+    .champion-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .champion-card {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .champion-card img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .champion-card:hover {
+      transform: scale(1.05);
+    }
+    .champion-card p a {
+      color: #00ffe7;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    .notice-banner {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+  </style>
+</head>
+
+<div style="text-align: center; margin: 50px 0;">
+  <button onclick="history.back()" style="
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00ffe7;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">
+    ← 戻る
+  </button>
+</div>
+
+<div class="notice-banner">
+  各チャンピオンごとの情報は現在編集中です
+</div>
+
+<body>
+  
+
+<h1>チャンピオン一覧</h1>
+<div style="text-align: center; margin: 30px 0;">
+  <input type="text" id="searchInput" placeholder="チャンピオン名で検索" 
+         style="padding: 10px; width: 280px; border-radius: 8px; font-size: 1em; margin-bottom: 10px;">
+
+  <div style="margin: 10px 0;">
+    <select id="roleFilter" style="padding: 8px; font-size: 1em; border-radius: 6px;">
+      <option value="">ロールで絞り込み</option>
+      <option value="TOP">TOP</option>
+      <option value="JUNGLE">JUNGLE</option>
+      <option value="MID">MID</option>
+      <option value="ADC">ADC</option>
+      <option value="SUPPORT">SUPPORT</option>
+    </select>
+  </div>
+
+ 
+  
+
+<!--  複数ロールがある場合下にコピーペースト後  
+  
+  deta-roleの横に data-name="チャンピオン名"を追加
+  
+  　　　　　　　   完了　　　　　　　　　-->
+
+<div class="champion-grid">   
+
+    <div class="champion-card" data-role="TOP" data-kana="ア" data-search="アーゴット,あーごっと,urgoy">
+      <a href="champions/urgot.html">
+        <img src="champion_picture/Urgot_0.jpg" alt="アーゴット">
+      </a>
+      <p><a href="champions/urgot.html">アーゴット</a></p>
+    </div>
+
+<div class="champion-card" data-role="MID" data-kana="ア" data-search="アーリ,あーり,ahri">
+  <a href="ahri.html">
+    <img src="champion_picture/Ahri_0.jpg" alt="アーリ">
+  </a>
+  <p><a href="ahri.html">アーリ</a></p>
+</div>
+
+    <div class="champion-card" data-role="JG" data-kana="ア" data-search="アイバーン,あいばーん,ivern">
+      <a href="champions/ivern.html">
+        <img src="champion_picture/Ivern_0.jpg" alt="アイバーン">
+      </a>
+      <p><a href="champions/ivern.html">アイバーン</a></p>
+    </div>
+
+    <div class="champion-card" data-role="MID" data-kana="ア" data-search="アカリ,あかり,akali">
+      <a href="champions/akali.html">
+        <img src="champion_picture/Akali_0.jpg" alt="アカリ">
+      </a>
+      <p><a href="champions/akali.html">アカリ</a></p>
+    </div>
+
+    <div class="champion-card" data-role="MID" data-kana="ア" data-search="アクシャン,あくしゃん,akshan">
+      <a href="champions/akshan.html">
+        <img src="champion_picture/Akshan_0.jpg" alt="アクシャン">
+      </a>
+      <p><a href="champions/akshan.html">アクシャン</a></p>
+    </div>
+
+    <div class="champion-card" data-role="MID" data-kana="ア" data-search="アジール,あじーる,azir">
+      <a href="champions/azir.html">
+        <img src="champion_picture/Azir_0.jpg" alt="アジール">
+      </a>
+      <p><a href="champions/azir.html">アジール</a></p>
+    </div>
+
+    <div class="champion-card" data-role="ADC" data-kana="ア" data-search="アッシュ,あっしゅ,ashe"
+      <a href="champions/ashe.html">
+        <img src="champion_picture/Ashe_0.jpg" alt="アッシュ">
+      </a>
+      <p><a href="champions/ashe.html">アッシュ</a></p>
+    </div>
+
+    <div class="champion-card" data-role="MID" data-kana="ア" data-search="アニー,あにー,annie">
+      <a href="champions/annie.html">
+        <img src="champion_picture/Annie_0.jpg" alt="アニー">
+      </a>
+      <p><a href="champions/annie.html">アニー</a></p>
+    </div>
+
+    <div class="champion-card" data-role="MID" data-kana="ア" data-search="アニビア,あにびあ,anivia">
+      <a href="champions/anivia.html">
+        <img src="champion_picture/Anivia_0.jpg" alt="アニビア">
+      </a>
+      <p><a href="champions/anivia.html">アニビア</a></p>
+    </div>
+
+    <div class="champion-card" data-role="ADC" data-kana="ア" data-search="アフェリオス,あふぇりおす,aphelios">
+      <a href="champions/aphelios.html">
+        <img src="champion_picture/Aphelios_0.jpg" alt="アフェリオス">
+      </a>
+      <p><a href="champions/aphelios.html">アフェリオス</a></p>
+    </div>
+
+    <div class="champion-card" data-role="JG" data-kana="ア" data-search="アムム,あむむ,amumu">
+  <a href="champions/amumu.html">
+    <img src="champion_picture/Amumu_0.jpg" alt="アムム">
+  </a>
+  <p><a href="champions/amumu.html">アムム</a></p>
+</div>
+<div class="champion-card" data-role="SUPPORT" data-kana="ア" data-search="アリスター,ありすたー,alistar">
+  <a href="champions/alistar.html">
+    <img src="champion_picture/Alistar_0.jpg" alt="アリスター">
+  </a>
+  <p><a href="champions/alistar.html">アリスター</a></p>
+</div>
+<div class="champion-card" data-role="TOP" data-kana="ア" data-search="アンベッサ,あんべっさ,ambessa">
+  <a href="ambessa.html">
+    <img src="champion_picture/Ambessa_0.jpg" alt="アンベッサ">
+  </a>
+  <p><a href="ambessa.html">アンベッサ</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="イ" data-search="イブリン,いぶりん,evelynn">
+  <a href="champions/evelynn.html">
+    <img src="champion_picture/Evelynn_0.jpg" alt="イブリン">
+  </a>
+  <p><a href="champions/evelynn.html">イブリン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="イ" data-search="イラオイ,いらおい,illaoi">
+  <a href="champions/illaoi.html">
+    <img src="champion_picture/Illaoi_0.jpg" alt="イラオイ">
+  </a>
+  <p><a href="champions/illaoi.html">イラオイ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="イレリア" data-search="イレリア,いれりあ,irelia">
+  <a href="champions/irelia.html">
+    <img src="champion_picture/Irelia_0.jpg" alt="イレリア">
+  </a>
+  <p><a href="champions/irelia.html">イレリア</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="イレリア" data-kana="イ" data-search="イレリア,いれりあ,irelia">
+  <a href="champions/irelia.html">
+    <img src="champion_picture/Irelia_0.jpg" alt="イレリア">
+  </a>
+  <p><a href="champions/irelia.html">イレリア</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="ウ" data-search="ウーコン,うーこん,wukong">
+  <a href="champions/wukong.html">
+    <img src="champion_picture/Wukong_0.jpg" alt="ウーコン">
+  </a>
+  <p><a href="champions/wukong.html">ウーコン</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="ウ" data-search="ウディア,うでぃあ,udye">
+  <a href="champions/udyr.html">
+    <img src="champion_picture/Udyr_0.jpg" alt="ウディア">
+  </a>
+  <p><a href="champions/udyr.html">ウディア</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="エ" data-search="エイトロックス,えいとろっくす,aatrox">
+  <a href="champions/Aatrox.html">
+    <img src="champion_picture/Aatrox_0.jpg" alt="エイトロックス">
+  </a>
+  <p><a href="champions/Aatrox.html">エイトロックス</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="エ" data-search="エコー,えこー,ekko">
+  <a href="champions/ekko.html">
+    <img src="champion_picture/Ekko_0.jpg" alt="エコー">
+  </a>
+  <p><a href="champions/ekko.html">エコー</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="エ" data-search="エズリアル,えずりある,ezreal">
+  <a href="champions/ezreal.html">
+    <img src="champion_picture/Ezreal_0.jpg" alt="エズリアル">
+  </a>
+  <p><a href="champions/ezreal.html">エズリアル</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="エ" data-search="エリス,えりす,elise">
+  <a href="champions/elise.html">
+    <img src="champion_picture/Elise_0.jpg" alt="エリス">
+  </a>
+  <p><a href="champions/elise.html">エリス</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="オ" data-search="オーロラ,おーろら,aurora">
+  <a href="champions/aurora.html">
+    <img src="champion_picture/Aurora_0.jpg" alt="オーロラ">
+  </a>
+  <p><a href="champions/aurora.html">オーロラ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="オ" data-search="オーン,おーん,orn">
+  <a href="champions/orn.html">
+    <img src="champion_picture/Ornn_0.jpg" alt="オーン">
+  </a>
+  <p><a href="champions/orn.html">オーン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="オ" data-search="オラフ,おらふ,olaf">
+  <a href="champions/olaf.html">
+    <img src="champion_picture/Olaf_0.jpg" alt="オラフ">
+  </a>
+  <p><a href="champions/olaf.html">オラフ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="オ" data-search="オリアナ,ありあな,oriana">
+  <a href="champions/oriana.html">
+    <img src="champion_picture/Orianna_0.jpg" alt="オリアナ">
+  </a>
+  <p><a href="champions/oriana.html">オリアナ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="オ" data-search="オレリオンソル,おれりおんそる,aurelionsol">
+  <a href="champions/aurelionsol.html">
+    <img src="champion_picture/AurelionSol_0.jpg" alt="オレリオン・ソル">
+  </a>
+  <p><a href="champions/aurelionsol.html">オレリオン・ソル</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="カ" data-search="カサンテ,かさんて,ksante">
+  <a href="champions/ksante.html">
+    <img src="champion_picture/KSante_0.jpg" alt="カ・サンテ">
+  </a>
+  <p><a href="champions/ksante.html">カ・サンテ</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="カ" data-search="カーサス,かーさす,karthus">
+  <a href="champions/karthus.html">
+    <img src="champion_picture/Karthus_0.jpg" alt="カーサス">
+  </a>
+  <p><a href="champions/karthus.html">カーサス</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="カ" data-search="カジックス,かじっくす,khazix">
+  <a href="champions/khazix.html">
+    <img src="champion_picture/KhaZix_0.jpg" alt="カ＝ジックス">
+  </a>
+  <p><a href="champions/khazix.html">カ＝ジックス</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="カ" data-search="カイサ,かいさ,kaisa">
+  <a href="champions/kaisa.html">
+    <img src="champion_picture/Kaisa_0.jpg" alt="カイ＝サ">
+  </a>
+  <p><a href="champions/kaisa.html">カイ＝サ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="カ" data-search="カサディン,かさでぃん,kassadin">
+  <a href="champions/kassadin.html">
+    <img src="champion_picture/Kassadin_0.jpg" alt="カサディン">
+  </a>
+  <p><a href="champions/kassadin.html">カサディン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="カ" data-search="カシオペア,かしおぺあ,cassiopeia">
+  <a href="champions/cassiopeia.html">
+    <img src="champion_picture/Cassiopeia_0.jpg" alt="カシオペア">
+  </a>
+  <p><a href="champions/cassiopeia.html">カシオペア</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="カ" data-search="カタリナ,かたりな,kararina">
+  <a href="champions/katarina.html">
+    <img src="champion_picture/Katarina_0.jpg" alt="カタリナ">
+  </a>
+  <p><a href="champions/katarina.html">カタリナ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="カ" data-search="カミール,かみーる,camille">
+  <a href="champions/camille.html">
+    <img src="champion_picture/Camille_0.jpg" alt="カミール">
+  </a>
+  <p><a href="champions/camille.html">カミール</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="カ" data-search="カリスタ,かりすた,kalista">
+  <a href="champions/kalista.html">
+    <img src="champion_picture/Kalista_0.jpg" alt="カリスタ">
+  </a>
+  <p><a href="champions/kalista.html">カリスタ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="カルマ" data-kana="カ" data-search="カルマ,かるま,karma">
+  <a href="champions/karma.html">
+    <img src="champion_picture/Karma_0.jpg" alt="カルマ">
+  </a>
+  <p><a href="champions/karma.html">カルマ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="カルマ" data-kana="カ" data-search="カルマ,かるま,karma">
+  <a href="champions/karma.html">
+    <img src="champion_picture/Karma_0.jpg" alt="カルマ">
+  </a>
+  <p><a href="champions/karma.html">カルマ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="ガ" data-search="ガリオ,がりお,galio">
+  <a href="champions/galio.html">
+    <img src="champion_picture/Galio_0.jpg" alt="ガリオ">
+  </a>
+  <p><a href="champions/galio.html">ガリオ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ガ" data-search="ガレン,がれん,garen">
+  <a href="champions/garen.html">
+    <img src="champion_picture/Garen_0.jpg" alt="ガレン">
+  </a>
+  <p><a href="champions/garen.html">ガレン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ガ" data-search="ガングプランク,がんくぷらんく,gangplank">
+  <a href="champions/gangplank.html">
+    <img src="champion_picture/Gangplank_0.jpg" alt="ガングプランク">
+  </a>
+  <p><a href="champions/gangplank.html">ガングプランク</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="キ" data-search="キヤナ,きやな,qiyana">
+  <a href="champions/qiyana.html">
+    <img src="champion_picture/Qiyana_0.jpg" alt="キヤナ">
+  </a>
+  <p><a href="champions/qiyana.html">キヤナ</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="キ" data-search="キンドレッド,きんどれっと,kindred">
+  <a href="champions/kindred.html">
+    <img src="champion_picture/Kindred_0.jpg" alt="キンドレッド">
+  </a>
+  <p><a href="champions/kindred.html">キンドレッド</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ク" data-search="クイン,くいん,quinn">
+  <a href="champions/quinn.html">
+    <img src="champion_picture/Quinn_0.jpg" alt="クイン">
+  </a>
+  <p><a href="champions/quinn.html">クイン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ク" data-search="クレッド,くれっど,kled">
+  <a href="champions/kled.html">
+    <img src="champion_picture/Kled_0.jpg" alt="クレッド">
+  </a>
+  <p><a href="champions/kled.html">クレッド</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="グウェン" data-kana="グ" data-search="グウェン,ぐうぇん,gwen">
+  <a href="champions/gwen.html">
+    <img src="champion_picture/Gwen_0.jpg" alt="グウェン">
+  </a>
+  <p><a href="champions/gwen.html">グウェン</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-name="グウェン" data-kana="グ" data-search="グウェン,ぐうぇん,gwen">
+  <a href="champions/gwen.html">
+    <img src="champion_picture/Gwen_0.jpg" alt="グウェン">
+  </a>
+  <p><a href="champions/gwen.html">グウェン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="グ" data-search="グラガス,ぐらがす,gragas">
+  <a href="champions/gragas.html">
+    <img src="champion_picture/Gragas_0.jpg" alt="グラガス">
+  </a>
+  <p><a href="champions/gragas.html">グラガス</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="グ" data-search="グレイブス,ぐれいぶす,graves">
+  <a href="champions/graves.html">
+    <img src="champion_picture/Graves_0.jpg" alt="グレイブス">
+  </a>
+  <p><a href="champions/graves.html">グレイブス</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ケ" data-search="ケイトリン,けいとりん,caitlyn">
+  <a href="champions/caitlyn.html">
+    <img src="champion_picture/Caitlyn_0.jpg" alt="ケイトリン">
+  </a>
+  <p><a href="champions/caitlyn.html">ケイトリン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ケ" data-search="ケイル,けいる,kayle">
+  <a href="champions/kayle.html">
+    <img src="champion_picture/Kayle_0.jpg" alt="ケイル">
+  </a>
+  <p><a href="champions/kayle.html">ケイル</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="ケ" data-search="ケイン,けいん,kayn">
+  <a href="champions/kayn.html">
+    <img src="champion_picture/Kayn_0.jpg" alt="ケイン">
+  </a>
+  <p><a href="champions/kayn.html">ケイン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ケ" data-search="ケネン,けねん,kennen">
+  <a href="champions/kennen.html">
+    <img src="champion_picture/Kennen_0.jpg" alt="ケネン">
+  </a>
+  <p><a href="champions/kennen.html">ケネン</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="コ" data-search="コーキ,こーき,corki">
+  <a href="champions/corki.html">
+    <img src="champion_picture/Corki_0.jpg" alt="コーキ">
+  </a>
+  <p><a href="champions/corki.html">コーキ</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="コ" data-search="コグ＝マウ,こぐ＝まう,kogmaw">
+  <a href="champions/kogmaw.html">
+    <img src="champion_picture/KogMaw_0.jpg" alt="コグ＝マウ">
+  </a>
+  <p><a href="champions/kogmaw.html">コグ＝マウ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="サ" data-search="サイオン,さいおん,sion">
+  <a href="champions/sion.html">
+    <img src="champion_picture/Sion_0.jpg" alt="サイオン">
+  </a>
+  <p><a href="champions/sion.html">サイオン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="サ" data-search="サイラス,さいらす,sylas">
+  <a href="champions/sylas.html">
+    <img src="champion_picture/Sylas_0.jpg" alt="サイラス">
+  </a>
+  <p><a href="champions/sylas.html">サイラス</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="サ" data-search="サミーラ,さみーら,samira">
+  <a href="champions/samira.html">
+    <img src="champion_picture/Samira_0.jpg" alt="サミーラ">
+  </a>
+  <p><a href="champions/samira.html">サミーラ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="ザイラ" data-kana="ザ" data-search="ザイラ,ざいら,zyra">
+  <a href="champions/zyra.html">
+    <img src="champion_picture/Zyra_0.jpg" alt="ザイラ">
+  </a>
+  <p><a href="champions/zyra.html">ザイラ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="ザイラ" data-kana="ザ" data-search="ザイラ,ざいら,zyra">
+  <a href="champions/zyra.html">
+    <img src="champion_picture/Zyra_0.jpg" alt="ザイラ">
+  </a>
+  <p><a href="champions/zyra.html">ザイラ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="ザ" data-search="ザック,ざっく,zac">
+  <a href="champions/zac.html">
+    <img src="champion_picture/Zac_0.jpg" alt="ザック">
+  </a>
+  <p><a href="champions/zac.html">ザック</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ザ" data-search="ザヤ,ざや,xayah">
+  <a href="champions/xayah.html">
+    <img src="champion_picture/Xayah_0.jpg" alt="ザヤ">
+  </a>
+  <p><a href="champions/xayah.html">ザヤ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="シ" data-search="シェン,しぇん,shen">
+  <a href="champions/shen.html">
+    <img src="champion_picture/Shen_0.jpg" alt="シェン">
+  </a>
+  <p><a href="champions/shen.html">シェン</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="シ" data-search="シャコ,しゃこ,shaco">
+  <a href="champions/shaco.html">
+    <img src="champion_picture/Shaco_0.jpg" alt="シャコ">
+  </a>
+  <p><a href="champions/shaco.html">シャコ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="シ" data-search="シンジャオ,しんじゃお,xinzhao">
+  <a href="champions/xinzhao.html">
+    <img src="champion_picture/XinZhao_0.jpg" alt="シン・ジャオ">
+  </a>
+  <p><a href="champions/xinzhao.html">シン・ジャオ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="シ" data-search="シンジド,しんじど,singed">
+  <a href="champions/singed.html">
+    <img src="champion_picture/Singed_0.jpg" alt="シンジド">
+  </a>
+  <p><a href="champions/singed.html">シンジド</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="シ" data-search="シンドラ,しんどら,syndra">
+    <img src="champion_picture/Syndra_0.jpg" alt="シンドラ">
+  </a>
+  <p><a href="champions/syndra.html">シンドラ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="シ" data-search="シヴァーナ,しヴぁーな,shyvana">
+  <a href="champions/shyvana.html">
+    <img src="champion_picture/Shyvana_0.jpg" alt="シヴァーナ">
+  </a>
+  <p><a href="champions/shyvana.html">シヴァーナ</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="シ" data-search="シヴィア,しゔぃあ,sivir">
+    <img src="champion_picture/Sivir_0.jpg" alt="シヴィア">
+  </a>
+  <p><a href="champions/sivir.html">シヴィア</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ジェイス" data-kana="ジ" data-search="ジェイス,じぇいす,jayce">
+  <a href="champions/jayce.html">
+    <img src="champion_picture/Jayce_0.jpg" alt="ジェイス">
+  </a>
+  <p><a href="champions/jayce.html">ジェイス</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ジェイス" data-kana="ジ" data-search="ジェイス,じぇいす,jayce">
+  <a href="champions/jayce.html">
+    <img src="champion_picture/Jayce_0.jpg" alt="ジェイス">
+  </a>
+  <p><a href="champions/jayce.html">ジェイス</a></p>
+</div>
+
+
+<div class="champion-card" data-role="MID" data-name="ジグス" data-kana="ジ" data-search="ジグス,じぐす,ziggs">
+  <a href="champions/ziggs.html">
+    <img src="champion_picture/Ziggs_0.jpg" alt="ジグス">
+  </a>
+  <p><a href="champions/ziggs.html">ジグス</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-name="ジグス" data-kana="ジ" data-search="ジグス,じぐす,ziggs">
+  <a href="champions/ziggs.html">
+    <img src="champion_picture/Ziggs_0.jpg" alt="ジグス">
+  </a>
+  <p><a href="champions/ziggs.html">ジグス</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-kana="ジ" data-search="ジャーヴァン,じゃーゔぁん,jarvaniv">
+  <a href="champions/jarvaniv.html">
+    <img src="champion_picture/JarvanIV_0.jpg" alt="ジャーヴァンIV">
+  </a>
+  <p><a href="champions/jarvaniv.html">ジャーヴァンIV</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ジ" data-search="ジャックス,じゃっくす,jax">
+  <a href="champions/jax.html">
+    <img src="champion_picture/Jax_0.jpg" alt="ジャックス">
+  </a>
+  <p><a href="champions/jax.html">ジャックス</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="ジ" data-search="ジャンナ,じゃんな,janna">
+  <a href="champions/janna.html">
+    <img src="champion_picture/Janna_0.jpg" alt="ジャンナ">
+  </a>
+  <p><a href="champions/janna.html">ジャンナ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="ジ" data-search="ジリアン,じりあん,zilean">
+  <a href="champions/zilean.html">
+    <img src="champion_picture/Zilean_0.jpg" alt="ジリアン">
+  </a>
+  <p><a href="champions/zilean.html">ジリアン</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ジ" data-search="ジン,じん,jhin">
+  <a href="champions/jhin.html">
+    <img src="champion_picture/Jhin_0.jpg" alt="ジン">
+  </a>
+  <p><a href="champions/jhin.html">ジン</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ジ" data-search="ジンクス,じんくす,jinx">
+  <a href="champions/jinx.html">
+    <img src="champion_picture/Jinx_0.jpg" alt="ジンクス">
+  </a>
+  <p><a href="champions/jinx.html">ジンクス</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="スウェイン" data-kana="ス" data-search="スウェイン,すうぇいん,swain">
+  <a href="champions/swain.html">
+    <img src="champion_picture/Swain_0.jpg" alt="スウェイン">
+  </a>
+  <p><a href="champions/swain.html">スウェイン</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-name="スウェイン" data-kana="ス" data-search="スウェイン,すうぇいん,swain">
+  <a href="champions/swain.html">
+    <img src="champion_picture/Swain_0.jpg" alt="スウェイン">
+  </a>
+  <p><a href="champions/swain.html">スウェイン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="スウェイン" data-kana="ス" data-search="スウェイン,すうぇいん,swain">
+  <a href="champions/swain.html">
+    <img src="champion_picture/Swain_0.jpg" alt="スウェイン">
+  </a>
+  <p><a href="champions/swain.html">スウェイン</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="ス" data-search="スカーナー,すかーなー,skarner">
+  <a href="champions/skarner.html">
+    <img src="champion_picture/Skarner_0.jpg" alt="スカーナー">
+  </a>
+  <p><a href="champions/skarner.html">スカーナー</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-name="スモルダー" data-kana="ス" data-search="スモルダー,すもるだー,smolder">
+  <a href="champions/smolder.html">
+    <img src="champion_picture/Smolder_0.jpg" alt="スモルダー">
+  </a>
+  <p><a href="champions/smolder.html">スモルダー</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="スモルダー" data-kana="ス" data-search="スモルダー,すもるだー,smolder">
+  <a href="champions/smolder.html">
+    <img src="champion_picture/Smolder_0.jpg" alt="スモルダー">
+  </a>
+  <p><a href="champions/smolder.html">スモルダー</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="ス" data-search="スレッシュ,すれっしゅ,thresh">
+  <a href="champions/thresh.html">
+    <img src="champion_picture/Thresh_0.jpg" alt="スレッシュ">
+  </a>
+  <p><a href="champions/thresh.html">スレッシュ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="セ" data-search="セジュアニ,ぜじゅあに,sejuani">
+  <a href="champions/sejuani.html">
+    <img src="champion_picture/Sejuani_0.jpg" alt="セジュアニ">
+  </a>
+  <p><a href="champions/sejuani.html">セジュアニ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="セ" data-search="セト,せと,sett">
+  <a href="champions/sett.html">
+    <img src="champion_picture/Sett_0.jpg" alt="セト">
+  </a>
+  <p><a href="champions/sett.html">セト</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="セナ" data-kana="セ" data-search="セナ,せな,senna">
+  <a href="champions/senna.html">
+    <img src="champion_picture/Senna_0.jpg" alt="セナ">
+  </a>
+  <p><a href="champions/senna.html">セナ</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-name="セナ" data-kana="セ" data-search="セナ,せな,senna">
+  <a href="champions/senna.html">
+    <img src="champion_picture/Senna_0.jpg" alt="セナ">
+  </a>
+  <p><a href="champions/senna.html">セナ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="セ" data-search="セラフィーン,せらふぃーん,seraphine">
+  <a href="champions/seraphine.html">
+    <img src="champion_picture/Seraphine_0.jpg" alt="セラフィーン">
+  </a>
+  <p><a href="champions/seraphine.html">セラフィーン</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-name="ゼド" data-kana="ゼ" data-search="ゼド,ぜど,zed">
+  <a href="champions/zed.html">
+    <img src="champion_picture/Zed_0.jpg" alt="ゼド">
+  </a>
+  <p><a href="champions/zed.html">ゼド</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ゼド" data-kana="ゼ" data-search="ゼド,ぜど,zed">
+  <a href="champions/zed.html">
+    <img src="champion_picture/Zed_0.jpg" alt="ゼド">
+  </a>
+  <p><a href="champions/zed.html">ゼド</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="ゼラス" data-kana="ゼ" data-search="ゼラス,ぜらす,xerath">
+  <a href="champions/xerath.html">
+    <img src="champion_picture/Xerath_0.jpg" alt="ゼラス">
+  </a>
+  <p><a href="champions/xerath.html">ゼラス</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ゼラス"  data-kana="ゼ" data-search="ゼラス,ぜらす,xerath">
+  <a href="champions/xerath.html">
+    <img src="champion_picture/Xerath_0.jpg" alt="ゼラス">
+  </a>
+  <p><a href="champions/xerath.html">ゼラス</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ゼ" data-search="ゼリ,ぜり,zeri">
+  <a href="champions/zeri.html">
+    <img src="champion_picture/Zeri_0.jpg" alt="ゼリ">
+  </a>
+  <p><a href="champions/zeri.html">ゼリ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="ソ" data-search="ソナ,そな,sona">
+  <a href="champions/sona.html">
+    <img src="champion_picture/Sona_0.jpg" alt="ソナ">
+  </a>
+  <p><a href="champions/sona.html">ソナ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="ソ" data-search="ソラカ,そらか,soraka">
+  <a href="champions/soraka.html">
+    <img src="champion_picture/Soraka_0.jpg" alt="ソラカ">
+  </a>
+  <p><a href="champions/soraka.html">ソラカ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="ゾーイ" data-kana="ゾ" data-search="ゾーイ,ぞーい,zoe">
+  <a href="champions/zoe.html">
+    <img src="champion_picture/Zoe_0.jpg" alt="ゾーイ">
+  </a>
+  <p><a href="champions/zoe.html">ゾーイ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ゾーイ" data-kana="ゾ" data-search="ゾーイ,ぞーい,zoe">
+  <a href="champions/zoe.html">
+    <img src="champion_picture/Zoe_0.jpg" alt="ゾーイ">
+  </a>
+  <p><a href="champions/zoe.html">ゾーイ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="タムケンチ" data-kana="タ" data-search="タムケンチ,たむけんち,tahmkench">
+  <a href="champions/tahmkench.html">
+    <img src="champion_picture/TahmKench_0.jpg" alt="タム・ケンチ">
+  </a>
+  <p><a href="champions/tahmkench.html">タム・ケンチ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="タムケンチ" data-kana="タ" data-search="タムケンチ,たむけんち,tahmkench">
+  <a href="champions/tahmkench.html">
+    <img src="champion_picture/TahmKench_0.jpg" alt="タム・ケンチ">
+  </a>
+  <p><a href="champions/tahmkench.html">タム・ケンチ</a></p>
+</div>
+
+
+<div class="champion-card" data-role="SUPPORT" data-kana="タ" data-search="タリック,たりっく,taric">
+  <a href="champions/taric.html">
+    <img src="champion_picture/Taric_0.jpg" alt="タリック">
+  </a>
+  <p><a href="champions/taric.html">タリック</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="タリヤ" data-kana="タ" data-search="タリヤ,たりや,taliyah">
+  <a href="champions/taliyah.html">
+    <img src="champion_picture/Taliyah_0.jpg" alt="タリヤ">
+  </a>
+  <p><a href="champions/taliyah.html">タリヤ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="タリヤ" data-kana="タ" data-search="タリヤ,たりや,taliyah">
+  <a href="champions/taliyah.html">
+    <img src="champion_picture/Taliyah_0.jpg" alt="タリヤ">
+  </a>
+  <p><a href="champions/taliyah.html">タリヤ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="タロン" data-kana="タ" data-search="タロン,たろん,talon">
+  <a href="champions/talon.html">
+    <img src="champion_picture/Talon_0.jpg" alt="タロン">
+  </a>
+  <p><a href="champions/talon.html">タロン</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="タロン" data-kana="タ" data-search="タロン,たろん,talon">
+  <a href="champions/talon.html">
+    <img src="champion_picture/Talon_0.jpg" alt="タロン">
+  </a>
+  <p><a href="champions/talon.html">タロン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ダイアナ" data-kana="ダ" data-search="ダイアナ,だいあな,diana">
+  <a href="champions/diana.html">
+    <img src="champion_picture/Diana_0.jpg" alt="ダイアナ">
+  </a>
+  <p><a href="champions/diana.html">ダイアナ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="ダイアナ" data-kana="ダ" data-search="ダイアナ,だいあな,diana">
+  <a href="champions/diana.html">
+    <img src="champion_picture/Diana_0.jpg" alt="ダイアナ">
+  </a>
+  <p><a href="champions/diana.html">ダイアナ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ダ" data-search="ダリウス,だりうす,darius">
+  <a href="champions/darius.html">
+    <img src="champion_picture/Darius_0.jpg" alt="ダリウス">
+  </a>
+  <p><a href="champions/darius.html">ダリウス</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="チョガス" data-kana="チ" data-search="チョガス,ちょがす,chogath">
+  <a href="champions/chogath.html">
+    <img src="champion_picture/Chogath_0.jpg" alt="チョ＝ガス">
+  </a>
+  <p><a href="champions/chogath.html">チョ＝ガス</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="チョガス" data-kana="チ" data-search="チョガス,ちょがす,chogath">
+  <a href="champions/chogath.html">
+    <img src="champion_picture/Chogath_0.jpg" alt="チョ＝ガス">
+  </a>
+  <p><a href="champions/chogath.html">チョ＝ガス</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="ツ" data-search="ツイステッドフェイト,ついすてっどふぇいと,twistedfate">
+  <a href="champions/twistedfate.html">
+    <img src="champion_picture/TwistedFate_0.jpg" alt="ツイステッド・フェイト">
+  </a>
+  <p><a href="champions/twistedfate.html">ツイステッド・フェイト</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="テ" data-search="ティーモ,てぃーも,teemo">
+  <a href="champions/teemo.html">
+    <img src="champion_picture/Teemo_0.jpg" alt="ティーモ">
+  </a>
+  <p><a href="champions/teemo.html">ティーモ</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ト" data-search="トゥイッチ,とぅいっち,twitch">
+  <a href="champions/twitch.html">
+    <img src="champion_picture/Twitch_0.jpg" alt="トゥイッチ">
+  </a>
+  <p><a href="champions/twitch.html">トゥイッチ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="トランドル" data-kana="ト" data-search="トランドル,とらんどる,trundle">
+  <a href="champions/trundle.html">
+    <img src="champion_picture/Trundle_0.jpg" alt="トランドル">
+  </a>
+  <p><a href="champions/trundle.html">トランドル</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="トランドル" data-kana="ト" data-search="トランドル,とらんどる,trundle">
+  <a href="champions/trundle.html">
+    <img src="champion_picture/Trundle_0.jpg" alt="トランドル">
+  </a>
+  <p><a href="champions/trundle.html">トランドル</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-name="トリスターナ" data-kana="ト" data-search="トリスターナ,とりすたーな,tristana">
+  <a href="champions/tristana.html">
+    <img src="champion_picture/Tristana_0.jpg" alt="トリスターナ">
+  </a>
+  <p><a href="champions/tristana.html">トリスターナ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="トリスターナ" data-kana="ト" data-search="トリスターナ,とりすたーな,tristana">
+  <a href="champions/tristana.html">
+    <img src="champion_picture/Tristana_0.jpg" alt="トリスターナ">
+  </a>
+  <p><a href="champions/tristana.html">トリスターナ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ト" data-search="トリンダメア,とりんだめあ,tryndamere">
+  <a href="champions/tryndamere.html">
+    <img src="champion_picture/Tryndamere_0.jpg" alt="トリンダメア">
+  </a>
+  <p><a href="champions/tryndamere.html">トリンダメア</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ドクタームンド" data-kana="ド" data-search="ドクタームンド,どくたーむんど,drmundo">
+  <a href="champions/drmundo.html">
+    <img src="champion_picture/DrMundo_0.jpg" alt="ドクター・ムンド">
+  </a>
+  <p><a href="champions/drmundo.html">ドクター・ムンド</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="ドクタームンド" data-kana="ド" data-search="ドクタームンド,どくたーむんど,drmundo">
+  <a href="champions/drmundo.html">
+    <img src="champion_picture/DrMundo_0.jpg" alt="ドクター・ムンド">
+  </a>
+  <p><a href="champions/drmundo.html">ドクター・ムンド</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ドレイブン" data-search="ドレイブン,どれいぶん,draven">
+  <a href="champions/draven.html">
+    <img src="champion_picture/Draven_0.jpg" alt="ドレイヴン">
+  </a>
+  <p><a href="champions/draven.html">ドレイヴン</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ナ" data-search="ナー,なー,gnar">
+  <a href="champions/gnar.html">
+    <img src="champion_picture/Gnar_0.jpg" alt="ナー">
+  </a>
+  <p><a href="champions/gnar.html">ナー</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ナ" data-search="ナサス,なさす,nasus">
+  <a href="champions/nasus.html">
+    <img src="champion_picture/Nasus_0.jpg" alt="ナサス">
+  </a>
+  <p><a href="champions/nasus.html">ナサス</a></p>
+</div>
+
+<div class="champion-card" data-role="JG" data-name="ナフィーリ" data-kana="ナ" data-search="ナフィーリ,なふぃーり,naafiri">
+  <a href="champions/naafiri.html">
+    <img src="champion_picture/Naafiri_0.jpg" alt="ナフィーリ">
+  </a>
+  <p><a href="champions/naafiri.html">ナフィーリ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ナフィーリ" data-kana="ナ" data-search="ナフィーリ,なふぃーり,naafiri">
+  <a href="champions/naafiri.html">
+    <img src="champion_picture/Naafiri_0.jpg" alt="ナフィーリ">
+  </a>
+  <p><a href="champions/naafiri.html">ナフィーリ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="ナ" data-search="ナミ,なみ,nami">
+  <a href="champions/nami.html">
+    <img src="champion_picture/Nami_0.jpg" alt="ナミ">
+  </a>
+  <p><a href="champions/nami.html">ナミ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ニーコ" data-kana="二" data-search="にーこ,,">
+  <a href="champions/neeko.html">
+    <img src="champion_picture/Neeko_0.jpg" alt="ニーコ">
+  </a>
+  <p><a href="champions/neeko.html">ニーコ</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/naafiri.html">
+    <img src="champion_picture/Nilah_0.jpg" alt="ニーラ">
+  </a>
+  <p><a href="champions/nilah.html">ニーラ</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/nidalee.html">
+    <img src="champion_picture/Nidalee_0.jpg" alt="ニダリー">
+  </a>
+  <p><a href="champions/nidalee.html">ニダリー</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/nunu.html">
+    <img src="champion_picture/Nunu_0.jpg" alt="ヌヌ＆ウィルンプ">
+  </a>
+  <p><a href="champions/nunu.html">ヌヌ＆ウィルンプ</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/nautilus.html">
+    <img src="champion_picture/Nautilus_0.jpg" alt="ノーチラス">
+  </a>
+  <p><a href="champions/nautilus.html">ノーチラス</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/nocturne.html">
+    <img src="champion_picture/Nocturne_0.jpg" alt="ノクターン">
+  </a>
+  <p><a href="champions/nocturne.html">ノクターン</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/heimerdinger.html">
+    <img src="champion_picture/Heimerdinger_0.jpg" alt="ハイマーディンガー">
+  </a>
+  <p><a href="champions/heimerdinger.html">ハイマーディンガー</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/bard.html">
+    <img src="champion_picture/Bard_0.jpg" alt="バード">
+  </a>
+  <p><a href="champions/bard.html">バード</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/pyke.html">
+    <img src="champion_picture/Pyke_0.jpg" alt="パイク">
+  </a>
+  <p><a href="champions/pyke.html">パイク</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/pantheon.html">
+    <img src="champion_picture/Pantheon_0.jpg" alt="パンテオン">
+  </a>
+  <p><a href="champions/pantheon.html">パンテオン</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/viktor.html">
+    <img src="champion_picture/Viktor_0.jpg" alt="ビクター">
+  </a>
+  <p><a href="champions/viktor.html">ビクター</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/fiora.html">
+    <img src="champion_picture/Fiora_0.jpg" alt="フィオラ">
+  </a>
+  <p><a href="champions/fiora.html">フィオラ</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/fizz.html">
+    <img src="champion_picture/Fizz_0.jpg" alt="フィズ">
+  </a>
+  <p><a href="champions/fizz.html">フィズ</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/fiddlesticks.html">
+    <img src="champion_picture/Fiddlesticks_0.jpg" alt="フィドルスティックス">
+  </a>
+  <p><a href="champions/fiddlesticks.html">フィドルスティックス</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/hwei.html">
+    <img src="champion_picture/Hwei_0.jpg" alt="フェイ">
+  </a>
+  <p><a href="champions/hwei.html">フェイ</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/briar.html">
+    <img src="champion_picture/Briar_0.jpg" alt="ブライアー">
+  </a>
+  <p><a href="champions/briar.html">ブライアー</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/braum.html">
+    <img src="champion_picture/Braum_0.jpg" alt="ブラウム">
+  </a>
+  <p><a href="champions/braum.html">ブラウム</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/vladimir.html">
+    <img src="champion_picture/Vladimir_0.jpg" alt="ブラッドミア">
+  </a>
+  <p><a href="champions/vladimir.html">ブラッドミア</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/brand.html">
+    <img src="champion_picture/Brand_0.jpg" alt="ブランド">
+  </a>
+  <p><a href="champions/brand.html">ブランド</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/blitzcrank.html">
+    <img src="champion_picture/Blitzcrank_0.jpg" alt="ブリッツクランク">
+  </a>
+  <p><a href="champions/blitzcrank.html">ブリッツクランク</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/hecarim.html">
+    <img src="champion_picture/Hecarim_0.jpg" alt="ヘカリム">
+  </a>
+  <p><a href="champions/hecarim.html">ヘカリム</a></p>
+</div>
+
+<div class="champion-card">
+  <a href="champions/veigar.html">
+    <img src="champion_picture/Veigar_0.jpg" alt="ベイガー">
+  </a>
+  <p><a href="champions/veigar.html">ベイガー</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="" data-kana="ベ" data-search="ベルヴェス,べるゔぇす,sbelveth">
+  <a href="champions/belveth.html">
+    <img src="champion_picture/Belveth_0.jpg" alt="ベル＝ヴェス">
+  </a>
+  <p><a href="champions/belveth.html">ベル＝ヴェス</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ボリベア" data-kana="ボ" data-search="ボリベア,ぼりべあ,volibear">
+  <a href="champions/volibear.html">
+    <img src="champion_picture/Volibear_0.jpg" alt="ボリベア">
+  </a>
+  <p><a href="champions/volibear.html">ボリベア</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="ボリベア" data-kana="ボ" data-search="ボリベア,ぼりべあ,volibear">
+  <a href="champions/volibear.html">
+    <img src="champion_picture/Volibear_0.jpg" alt="ボリベア">
+  </a>
+  <p><a href="champions/volibear.html">ボリベア</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ポッピー" data-kana="ポ" data-search="ポッピー,ぽっぴー,poppy">
+  <a href="champions/poppy.html">
+    <img src="champion_picture/Poppy_0.jpg" alt="ポッピー">
+  </a>
+  <p><a href="champions/poppy.html">ポッピー</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="ポッピー" data-kana="ポ" data-search="ポッピー,ぽっぴー,poppy">
+  <a href="champions/poppy.html">
+    <img src="champion_picture/Poppy_0.jpg" alt="ポッピー">
+  </a>
+  <p><a href="champions/poppy.html">ポッピー</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="ポッピー" data-kana="ポ" data-search="ポッピー,ぽっぴー,poppy">
+  <a href="champions/poppy.html">
+    <img src="champion_picture/Poppy_0.jpg" alt="ポッピー">
+  </a>
+  <p><a href="champions/poppy.html">ポッピー</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="マオカイ" data-kana="マ" data-search="マオカイ,まおかい,maokai">
+  <a href="champions/maokai.html">
+    <img src="champion_picture/Maokai_0.jpg" alt="マオカイ">
+  </a>
+  <p><a href="champions/maokai.html">マオカイ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="マオカイ" data-kana="マ" data-search="マオカイ,まおかい,maokai">
+  <a href="champions/maokai.html">
+    <img src="champion_picture/Maokai_0.jpg" alt="マオカイ">
+  </a>
+  <p><a href="champions/maokai.html">マオカイ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="マオカイ" data-kana="マ" data-search="マオカイ,まおかい,maokai">
+  <a href="champions/maokai.html">
+    <img src="champion_picture/Maokai_0.jpg" alt="マオカイ">
+  </a>
+  <p><a href="champions/maokai.html">マオカイ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="" data-kana="マ" data-search="マスターイー,ますたーいー,masteryi">
+  <a href="champions/masteryi.html">
+    <img src="champion_picture/MasterYi_0.jpg" alt="マスター・イー">
+  </a>
+  <p><a href="champions/masteryi.html">マスター・イー</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="" data-kana="マ" data-search="マルザハール,まるざはーる,malzahar">
+  <a href="champions/malzahar.html">
+    <img src="champion_picture/Malzahar_0.jpg" alt="マルザハール">
+  </a>
+  <p><a href="champions/malzahar.html">マルザハール</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="" data-kana="マ" data-search="マルファイト,まるふぁいと,malphite">
+  <a href="champions/malphite.html">
+    <img src="champion_picture/Malphite_0.jpg" alt="マルファイト">
+  </a>
+  <p><a href="champions/malphite.html">マルファイト</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-name="" data-kana="ミ" data-search="ミスフォーチュン,みすふぉーちゅん,missfortune">
+  <a href="champions/missfortune.html">
+    <img src="champion_picture/MissFortune_0.jpg" alt="ミス・フォーチュン">
+  </a>
+  <p><a href="champions/missfortune.html">ミス・フォーチュン</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="" data-kana="ミ" data-search="ミリオ,みりお,milio">
+  <a href="champions/milio.html">
+    <img src="champion_picture/Milio_0.jpg" alt="ミリオ">
+  </a>
+  <p><a href="champions/milio.html">ミリオ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="メル" data-kana="メ" data-search="メル,める,mel">
+  <a href="champions/mel.html">
+    <img src="champion_picture/Mel_0.jpg" alt="メル">
+  </a>
+  <p><a href="champions/mel.html">メル</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="メル" data-kana="メ" data-search="メル,める,mel">
+  <a href="champions/mel.html">
+    <img src="champion_picture/Mel_0.jpg" alt="メル">
+  </a>
+  <p><a href="champions/mel.html">メル</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="モルガナ" data-kana="モ" data-search="モルガナ,もるがな,morgana">
+  <a href="champions/morgana.html">
+    <img src="champion_picture/Morgana_0.jpg" alt="モルガナ">
+  </a>
+  <p><a href="champions/morgana.html">モルガナ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="モルガナ" data-kana="モ" data-search="モルガナ,もるがな,morgana">
+  <a href="champions/morgana.html">
+    <img src="champion_picture/Morgana_0.jpg" alt="モルガナ">
+  </a>
+  <p><a href="champions/morgana.html">モルガナ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="" data-kana="モ" data-search="モルデカイザー,もるでかいざー,mordekaiser">
+  <a href="champions/mordekaiser.html">
+    <img src="champion_picture/Mordekaiser_0.jpg" alt="モルデカイザー">
+  </a>
+  <p><a href="champions/mordekaiser.html">モルデカイザー</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ヤスオ" data-kana="ヤ" data-search="ヤスオ,やすお,yasuo">
+    <img src="champion_picture/Yasuo_0.jpg" alt="ヤスオ">
+  </a>
+  <p><a href="champions/yasuo.html">ヤスオ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ヤスオ" data-kana="ヤ" data-search="ヤスオ,やすお,yasuo">
+    <img src="champion_picture/Yasuo_0.jpg" alt="ヤスオ">
+  </a>
+  <p><a href="champions/yasuo.html">ヤスオ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="" data-kana="" data-search=",,">
+    <img src="champion_picture/Yuumi_0.jpg" alt="ユーミ">
+  </a>
+  <p><a href="champions/yumi.html">ユーミ</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ヨネ" data-kana="ヨ" data-search="ヨネ,よね,yone">
+  <a href="champions/yone.html">
+    <img src="champion_picture/Yone_0.jpg" alt="ヨネ">
+  </a>
+  <p><a href="champions/yone.html">ヨネ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ヨネ" data-kana="ヨ" data-search="ヨネ,よね,yone">
+  <a href="champions/yone.html">
+    <img src="champion_picture/Yone_0.jpg" alt="ヨネ">
+  </a>
+  <p><a href="champions/yone.html">ヨネ</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="" data-kana="ヨ" data-search="ヨリック,よりっく,yorick">
+  <a href="champions/yorick.html">
+    <img src="champion_picture/Yorick_0.jpg" alt="ヨリック">
+  </a>
+  <p><a href="champions/yorick.html">ヨリック</a></p>
+</div>
+
+  <div class="champion-card" data-role="MID" data-name="" data-kana="ラ" data-search="ライズ,らいず,ryze">
+    <img src="champion_picture/Ryze_0.jpg" alt="ライズ">
+  </a>
+  <p><a href="champions/ryze.html">ライズ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="" data-kana="ラ" data-search="ラカン,らかん,rakan">
+  <a href="champions/rakan.html">
+    <img src="champion_picture/Rakan_0.jpg" alt="ラカン">
+  </a>
+  <p><a href="champions/rakan.html">ラカン</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-name="ラックス"data-kana="ラ" data-search="ラックス,らっくす,lux">
+  <a href="champions/lux.html">
+    <img src="champion_picture/Lux_0.jpg" alt="ラックス">
+  </a>
+  <p><a href="champions/lux.html">ラックス</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-name="ラックス" data-kana="ラ" data-search="ラックス,らっくす,lux">
+  <a href="champions/lux.html">
+    <img src="champion_picture/Lux_0.jpg" alt="ラックス">
+  </a>
+  <p><a href="champions/lux.html">ラックス</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="ラ" data-search="ラムス,らむす,rammus">
+  <a href="champions/rammus.html">
+    <img src="champion_picture/Rammus_0.jpg" alt="ラムス">
+  </a>
+  <p><a href="champions/rammus.html">ラムス</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="ラ" data-search="ランブル,らんぶる,rumble">
+    <img src="champion_picture/Rumble_0.jpg" alt="ランブル">
+  </a>
+  <p><a href="champions/rumble.html">ランブル</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="リ" data-search="リーシン,りーしん,leesin">
+  <a href="champions/lee-sin.html">
+    <img src="champion_picture/LeeSin_0.jpg" alt="リー・シン">
+  </a>
+  <p><a href="champions/lee-sin.html">リー・シン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="リ" data-search="リサンドラ,りさんどら,lissandra">
+  <a href="champions/lissandra.html">
+    <img src="champion_picture/Lissandra_0.jpg" alt="リサンドラ">
+  </a>
+  <p><a href="champions/lissandra.html">リサンドラ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="リ" data-search="リリア,りりあ,lillia">
+  <a href="champions/lillia.html">
+    <img src="champion_picture/Lillia_0.jpg" alt="リリア">
+  </a>
+  <p><a href="champions/lillia.html">リリア</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-kana="リ" data-search="リヴェン,りゔぇん,riven">
+    <img src="champion_picture/Riven_0.jpg" alt="リヴェン">
+  </a>
+  <p><a href="champions/riven.html">リヴェン</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ル" data-search="ルシアン,るしあん,lucian">
+  <a href="champions/lucian.html">
+    <img src="champion_picture/Lucian_0.jpg" alt="ルシアン">
+  </a>
+  <p><a href="champions/lucian.html">ルシアン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="ル" data-search="ルブラン,るぶらん,leblanc">
+  <a href="champions/leblanc.html">
+    <img src="champion_picture/LeBlanc_0.jpg" alt="ルブラン">
+  </a>
+  <p><a href="champions/leblanc.html">ルブラン</a></p>
+</div>
+
+
+ <div class="champion-card" data-role="SUPPORT" data-kana="ル" data-search="ルル,るる,lulu">
+  <a href="champions/lulu.html"></a>
+    <img src="champion_picture/Lulu_0.jpg" alt="ルル">
+  </a>
+  <p><a href="champions/lulu.html">ルル</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="レ" data-search="レオナ,れおな,reona">
+  <a href="champions/leona.html">
+    <img src="champion_picture/Leona_0.jpg" alt="レオナ">
+  </a>
+  <p><a href="champions/leona.html">レオナ</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="レ" data-search="レクサイ,れくさい,reksai">
+  <a href="champions/reksai.html">
+    <img src="champion_picture/RekSai_0.jpg" alt="レク＝サイ">
+  </a>
+  <p><a href="champions/reksai.html">レク＝サイ</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="レ" data-search="レナータグラスク,れなーたぐらすく,renata">
+  <a href="champions/renata.html">
+    <img src="champion_picture/Renata_0.jpg" alt="レナータ・グラスク">
+  </a>
+  <p><a href="champions/renata.html">レナータ・グラスク</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="レ" data-search="レネクトン,れねくとん,renekton">
+  <a href="champions/renekton.html">
+    <img src="champion_picture/Renekton_0.jpg" alt="レネクトン">
+  </a>
+  <p><a href="champions/renekton.html">レネクトン</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT" data-kana="レ" data-search="レル,れる,rell">
+  <a href="champions/rell.html">
+    <img src="champion_picture/Rell_0.jpg" alt="レル">
+  </a>
+  <p><a href="champions/rell.html">レル</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="レ" data-search="レンガー,れんがー,renger">
+  <a href="champions/rengar.html">
+    <img src="champion_picture/Rengar_0.jpg" alt="レンガー">
+  </a>
+  <p><a href="champions/rengar.html">レンガー</a></p>
+</div>
+
+<div class="champion-card" data-role="TOP" data-name="ワーウィック" data-kana="ワ" data-search="ワーウィック,わーうぃっく,warwick">
+  <a href="champions/warwick.html">
+    <img src="champion_picture/Warwick_0.jpg" alt="ワーウィック">
+  </a>
+  <p><a href="champions/warwick.html">ワーウィック</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-name="ワーウィック" data-kana="ワ" data-search="ワーウィック,わーうぃっく,warwick">
+  <a href="champions/warwick.html">
+    <img src="champion_picture/Warwick_0.jpg" alt="ワーウィック">
+  </a>
+  <p><a href="champions/warwick.html">ワーウィック</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="ヴ" data-search="ヴァイ,ゔぁい,vi">
+  <a href="champions/vi.html">
+    <img src="champion_picture/Vi_0.jpg" alt="ヴァイ">
+  </a>
+  <p><a href="champions/vi.html">ヴァイ</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC" data-kana="ヴ" data-search="ヴァルス,ゔぁるす,"varus>
+  <a href="champions/varus.html">
+    <img src="champion_picture/Varus_0.jpg" alt="ヴァルス">
+  </a>
+  <p><a href="champions/varus.html">ヴァルス</a></p>
+</div>
+
+<div class="champion-card" data-role="JUNGLE" data-kana="ヴ" data-search="ヴィエゴ,ゔぃえご,viego">
+  <a href="champions/viego.html">
+    <img src="champion_picture/Viego_0.jpg" alt="ヴィエゴ">
+  </a>
+  <p><a href="champions/viego.html">ヴィエゴ</a></p>
+</div>
+
+<div class="champion-card" data-role="ADC,TOP" data-kana="ヴ" data-search="ヴェイン,ゔぇいん,veyne">
+  <a href="champions/vayne.html">
+    <img src="champion_picture/Vayne_0.jpg" alt="ヴェイン">
+  </a>
+  <p><a href="champions/vayne.html">ヴェイン</a></p>
+</div>
+
+<div class="champion-card" data-role="MID" data-kana="ヴ" data-search="ヴェックス,ゔぇっくす,vex">
+  <a href="champions/vex.html">
+    <img src="champion_picture/Vex_0.jpg" alt="ヴェックス">
+  </a>
+  <p><a href="champions/vex.html">ヴェックス</a></p>
+</div>
+
+<div class="champion-card" data-role="SUPPORT,MID" data-kana="ヴ" data-search="ヴェルコズ,ゔぇるこず,velkoz">
+  <a href="champions/velkoz.html">
+    <img src="champion_picture/Velkoz_0.jpg" alt="ヴェル＝コズ">
+  </a>
+  <p><a href="champions/velkoz.html">ヴェル＝コズ</a></p>
+</div>
+
+
+  </div>
+
+<script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const filter = this.value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.champion-card');
+
+    cards.forEach(card => {
+      const name = card.innerText.toLowerCase();
+      card.style.display = name.includes(filter) ? '' : 'none';
+    });
+  });
+</script>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const roleFilter = document.getElementById('roleFilter');
+  const kanaButtons = document.querySelectorAll('.kana-button');
+  const cards = document.querySelectorAll('.champion-card');
+
+  let selectedKana = '';
+
+  function kanaToHira(str) {
+    return str.replace(/[\u30a1-\u30f6]/g, (match) =>
+      String.fromCharCode(match.charCodeAt(0) - 0x60)
+    );
+  }
+
+  function normalize(str) {
+    const lower = str.toLowerCase();
+    const hira = kanaToHira(lower);
+    return hira;
+  }
+
+  function filterCards() {
+    const search = normalize(searchInput.value.trim());
+    const role = roleFilter.value;
+
+    cards.forEach(card => {
+      const searchData = normalize(card.getAttribute('data-search') || '');
+      const cardRole = card.getAttribute('data-role') || '';
+      const kana = card.getAttribute('data-kana') || '';
+
+      const matchesSearch = !search || searchData.includes(search);
+      const matchesRole = !role || role === cardRole;
+      const matchesKana = !selectedKana || kana === selectedKana;
+
+      card.style.display = (matchesSearch && matchesRole && matchesKana) ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  roleFilter.addEventListener('change', filterCards);
+  kanaButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedKana = btn.getAttribute('data-kana');
+      filterCards();
+    });
+  });
+</script>
+<script>
+  function filterChampions(role) {
+    const cards = document.querySelectorAll('.champion-card');
+    const shownNames = new Set();
+
+    cards.forEach(card => {
+      const cardRole = card.dataset.role;
+      const name = card.dataset.name;
+
+      // 一旦すべて非表示にする
+      card.style.display = "none";
+
+      // ロール一致（または全体）かつ、重複でない場合は表示
+      const isRoleMatch = role === "" || cardRole === role;
+
+      // nameがある → 重複チェック。nameがない → チェックせず表示
+      if (isRoleMatch) {
+        if (!name || !shownNames.has(name)) {
+          card.style.display = "block";
+          if (name) {
+            shownNames.add(name);
+          }
+        }
+      }
+    });
+  }
+
+  // セレクトボックスと連携
+  document.addEventListener("DOMContentLoaded", () => {
+    const roleSelect = document.getElementById("roleFilter");
+    roleSelect.addEventListener("change", function () {
+      filterChampions(this.value);
+    });
+
+    // 初期状態でも重複排除して全表示
+    filterChampions("");
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const championLinks = document.querySelectorAll('.champion-card a');
+
+    championLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault(); // 元のリンクをキャンセル
+        window.location.href = 'under-construction.html'; // 工事中ページへリダイレクト
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+

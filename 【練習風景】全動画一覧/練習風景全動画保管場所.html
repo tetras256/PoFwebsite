@@ -1,0 +1,75 @@
+  <!-- コード総入れ替えゆき6/28-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>練習風景全動画保管場所</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #ffe25f;
+    }
+
+    .back-button {
+  display: block;
+  width: 140px;
+  margin: 0 auto 30px auto;
+  padding: 12px 20px;
+  background-color: #ffe25f;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.back-button:hover {
+  background-color: #d6bf3d;
+}
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-grid iframe {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>練習風景 全動画保管場所</h1>
+  <a href="HANDSWEBSITE.html" class="back-button">ホームへ戻る</a>
+
+  <div class="video-grid" id="allVideos"></div>
+
+<script src="練習風景動画はここ.js"></script>
+
+
+   <script>
+    const container = document.getElementById("allVideos");
+    videoList.slice().reverse().forEach((url) => {
+      const frame = document.createElement("iframe");
+      frame.src = url;
+      frame.frameBorder = 0;
+      frame.allowFullscreen = true;
+      container.appendChild(frame);
+    });
+  </script>
+</body>
+</html>
