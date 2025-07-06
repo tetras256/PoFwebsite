@@ -18,8 +18,10 @@
       display: flex;
       align-items: center;
       padding: 20px;
-      border-bottom: 2px solid #1a8cff;
       position: relative;
+      justify-content: space-between;
+      height: 50px;
+      margin-bottom: 20px;
     }
 
     header img {
@@ -28,7 +30,7 @@
     }
 
     .main-title {
-      font-size: 45px;
+      font-size: 75px;
       color: #ffe25f;
       letter-spacing: 2px;
       font-weight: bold;
@@ -43,7 +45,7 @@
   align-items: center;           /* 垂直方向も中央揃え */
   gap: 24px;                     /* 要素間の余白（お好みで）   */
   flex-wrap: wrap;               /* 画面が狭いとき折り返すなら */
-  margin-top: 3cm; /* 高さ */
+  margin-top: 4cm; /* 高さ */
      }
 
     /* YouTube動画＋アイコン横並び */
@@ -54,12 +56,24 @@
 }
 
 
+
+
+.side-img.left {
+  margin-right: 24px; /* ← 動画との間にスペース */
+  margin-top: 80px;   /* ← 動画より少し下げたい場合（調整済み） */
+}
+
+.side-img.right {
+  margin-left: 24px;  /* ← こちらも動画との間にスペース */
+  margin-top: 80px;
+}
+
 .side-img.left img,
 .side-img.right img {
-  width: 260px;  /* トロフィチャレサイズ */
+  width: 300px;  /* トロフィチャレサイズ */
   height: auto;
   padding-top: 0px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   background-color: #000;
   box-sizing: border-box;
 }
@@ -104,14 +118,14 @@
     .box h2, .box h3 {
       color: #a3c0ff;
       font-weight: 700;
-      font-size:1.1em;
+      font-size:1.8em;
       margin-bottom: 16px;
     }
 
     .box h3 {
       margin-top: 0;
       font-weight: 600;
-      font-size: 1.1em;
+      font-size: 1.8em;
       margin-bottom: 12px;
     }
 
@@ -166,16 +180,9 @@
     }
 
     #aiming-personality .box-bg-image {
-      width: 440px;
+      width: 400px;
       opacity: 0.2;
-      right: 30pz;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: #111;
+      right: 30px;
     }
 
     header nav a {
@@ -197,7 +204,7 @@
 
 <header>
  <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-  <img src="Hnslogo.png" alt="Logo" style="height:80px;">
+  <img src="../home/Hnslogo.png" alt="Logo" style="height:80px;">
   <a href="選手募集/募集ページ.html" style="font-size: 24px; font-weight: bold; color: white; text-decoration: none;">
     HANDS Esports
   </a>
@@ -208,20 +215,16 @@
   <a href="募集ページ.html">HNS選手募集</a>
   <a href="../応募フォーム/apply.html">応募フォーム</a>
   <a href="../チャンピオン一覧/champions.html">チャンピオン一覧</a>
-  <a href="../ロール紹介/roles.html">ロール紹介</a> <!-- ←追加 -->
 </nav>
 
 </header>
 
-  <!-- ヘッダー -->
-  <header>
-    <div class="main-title">HNS LJL選手募集</div>
-  </header>
+  <div class="main-title">HNS LJL選手募集</div>
 
   <!-- 動画＋アイコン -->
   <div class="video-wrapper">
     <div class="side-img left">
-      <img src="チャレ.png" alt="チャレアイコン" />
+      <img src="トロフィー.png" alt="トロフィーアイコン" />
     </div>
     <div class="main-video">
   <iframe width="560" height="315"
@@ -279,24 +282,23 @@
       <img class="box-bg-image" src="requirement.png" alt="背景画像" />
     </div>
 
-    <!-- HNSで目指す人物像 -->
-    <div id="aiming-personality" class="box">
-      <div class="box-content">
-        <h3>HNSで目指す人物像</h3>
-        <ul>
-          <li>成長のために自ら行動できる方</li>
-          <li>自身の役割を理解し、最後までやり遂げる覚悟のある方</li>
-          <li>指示やフィードバックを素直に受け入れられる方</li>
-          <li>集中力を保ち反復練習を継続できる方</li>
-        </ul>
-        <p>「本気でチームで勝ちたい」という強い意志を持つあなたを歓迎します。<br />
-        興味のある方はぜひご応募ください。<br />
-        勝利は繋がる手の中にあります。</p>
-      </div>
-      <img class="box-bg-image" src="lee.png" alt="背景画像" />
-    </div>
-
+<div id="aiming-personality" class="box" style="display: flex; align-items: flex-start;">
+  <div class="box-content" style="min-width: 400px; max-width: 600px; flex-shrink: 0;">
+    <h3>HNSで目指す人物像</h3>
+    <ul>
+      <li>成長のために自ら行動できる方</li>
+      <li>自身の役割を理解し、最後までやり遂げる覚悟のある方</li>
+      <li>指示やフィードバックを素直に受け入れられる方</li>
+      <li>集中力を保ち反復練習を継続できる方</li>
+    </ul>
+    <p>
+      「本気でチームで勝ちたい」という強い意志を持つあなたを歓迎します。<br />
+      興味のある方はぜひご応募ください。<br />
+      勝利は繋がる手の中にあります。
+    </p>
   </div>
+  <video src="lucian.mp4" width="900" muted autoplay loop style="margin-left: 0px; border-radius: 8px; flex-shrink: 0;"></video>
+</div>
 
 </body>
 </html>
