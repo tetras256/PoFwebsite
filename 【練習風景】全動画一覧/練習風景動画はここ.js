@@ -2,14 +2,13 @@
 //途中の部分をembedに書き換えてね
 // 練習風景動画はここ.js
 const videoList = [
-  "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  "https://www.youtube.com/embed/2Vv-BfVoq4g",
-  "https://www.youtube.com/embed/kXYiU_JCYtU",
-  "https://www.youtube.com/embed/CevxZvSJLk8",
-  "https://www.youtube.com/embed/ktvTqknDobU",
-  "https://www.youtube.com/embed/3JZ_D3ELwOQ",
-  "https://www.youtube.com/embed/fJ9rUzIMcZQ",
-  "https://www.youtube.com/embed/L_jWHffIx5E",
-  "https://www.youtube.com/embed/o1tj2zJ2Wvg",
-  "https://www.youtube.com/embed/s7jXASBWwwI"
+  "https://www.youtube.com/embed/hjNrQLxBIKg?si=WhZ8g-cH95hd7-Z1",
+  "https://www.youtube.com/embed/EtLLVEaUaTc?si=qUGmyrvM5PCbvQUh",
+  "https://www.youtube.com/embed/9K1Rov_wLu4?si=dsVML4mCxQ-DY9eY",
+  "https://www.youtube.com/embed/fOrYN9JkG1g?si=qUcUCXh9o9hnTau_",
+  "https://www.youtube.com/embed/Yf3-JmT-k2E?si=Jiz7T9hHt6YYdQ6Y",
+  "https://www.youtube.com/embed/Bhf6gFLNxBk?si=etr7V3JJQiyZfO3l",
+  "https://www.youtube.com/embed/iFTImarMO-4?si=Lcwf7DFLZEX_OpGh",
+  "https://www.youtube.com/embed/XGIDRwm7TDk?si=64KJ4BMvR2N_RvMQ"
 ];
+
