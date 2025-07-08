@@ -346,6 +346,26 @@
   text-shadow: 0 0 8px #00bfff;
 }
 
+.catchphrase-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* ロゴと文字の間 */
+  margin-top: 20px;
+}
+
+.catchphrase-with-logo img.hero-logo {
+  height: 60px;  /* ← 好きなサイズに調整 */
+  object-fit: contain;
+}
+
+.catchphrase-with-logo p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
 .catchphrase-section {
   background-image: url("home/背景動画下.jpg");
  /*  background-color: #616161; /* 黒背景 */
@@ -371,12 +391,11 @@
   color: #ffffff; /* チームカラーに近いゴールド系 */
   font-size: 2.8rem;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
   flex-grow: 1;
   margin-left: 40px; /* ロゴとの空間 */
   user-select: none;
 }
-
 
 .section.teams {
   padding: 60px 20px;
