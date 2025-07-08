@@ -75,12 +75,10 @@
 
     setTimeout(() => {
       setInterval(() => {
-        slides.style.opacity = '0';
 
         setTimeout(() => {
           index = (index + 1) % total;
           slides.style.transform = `translateX(-${index * 100}%)`;
-          slides.style.opacity = '1';
         }, 200);
       }, 5000);
     }, delay);
