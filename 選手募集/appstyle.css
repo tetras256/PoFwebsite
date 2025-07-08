@@ -86,9 +86,9 @@
 }
 
 .section {
-  max-width: 1350px; /* 1080px × 1.25倍 */
-  margin: 30px auto;
-  padding: 0 20px;
+  max-width: 1000px; /* 1080px × 1.25倍 */
+  margin: 0 auto;
+  padding: 60 20px;
 }
 
 /* テキストボックスの最大幅も増やす場合はここを調整 */

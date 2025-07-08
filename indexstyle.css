@@ -99,11 +99,11 @@
     }
 
     .role-box {
-      background: #1e1e1e;
+      background:rgba(30, 30, 30, 1);  /* ← 0.8は透明度（0〜1で調整） */
       padding: 45px;
       border-radius: 12px;
       width: 300px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 1);
       text-align: center;
       transition: all 0.3s ease;
     }
@@ -115,7 +115,7 @@
 
     .role-box h3 {
      margin-bottom: 25px;
-     font-size: 22px;
+     font-size: 26px;
      color: #fff;
     } 
 
@@ -125,11 +125,10 @@
       border-radius: 10px;
     }
 
-    .slides {
-      display: flex;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      opacity: 1;
-    }
+ .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
     .slides img {
       width: 100%;
@@ -152,10 +151,10 @@
 }
 
 .player-name {
-  margin-top: 10px;
+  margin-top: 12px;
   color: #fff;
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 1.6rem;  /* ← 文字を大きく */
+  font-weight: bold;  /* ← より見やすく */
 }
 
     footer {
@@ -240,7 +239,11 @@
 
     .champion-link-title {
       text-align: center;
-      margin-bottom: 100px;
+      margin-bottom: 60px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+
     }
 
     .champion-link-title a {
@@ -267,16 +270,17 @@
 
 .swiper.practiceSwiper {
     width: 100%;
+    max-width: 1600px;
+    margin:0 auto;
     padding-bottom: 60px;
-    display: flex;
-  justify-content: flex-end;
+    
   }
 
   .practiceSwiper .swiper-slide {
-    width: 300px;
+    width: 600px;
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .practiceSwiper .swiper-slide iframe {
@@ -285,6 +289,7 @@
     border-radius: 10px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   }
+
 
   .swiper-button-next,
   .swiper-button-prev {
@@ -310,6 +315,10 @@
   border: 0;
 }
 
+.practiceSwiper .swiper-slide-duplicate {
+  display:none;
+  }
+
 .team-role-title {
   text-align: center;
   margin: 0 auto 30px auto;
@@ -329,5 +338,11 @@
   text-shadow: 0 0 8px #00bfff;
 }
 
+.section.teams {
+  padding: 60px 20px;
+  background-image: url("1.jpg");  /* ← ここに好きな画像のパスを指定 */
+  background-size: cover;   /* 画面にフィット */
+  background-position: center; /* 中央寄せ */
+  background-repeat: no-repeat; /* 繰り返しなし */
+}
 
-  
