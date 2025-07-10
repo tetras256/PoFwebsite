@@ -14,13 +14,12 @@
       font-size: 16px;
     }
     header {
-      background: #1a0000;
+      background: #111;
       display: flex;
       align-items: center;
       padding: 20px;
       position: relative;
       justify-content: space-between;
-      height: 60px;
       box-shadow: 0 0 10px #ff0000aa;
     }
     header img {
@@ -35,7 +34,7 @@
       margin: 40px 0;
       text-shadow: 0 0 10px #ff0000;
     }
-    .section {
+    /*.section {
       max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
@@ -43,7 +42,7 @@
       border-radius: 12px;
       box-shadow: 0 0 20px #330000;
     }
-    .box {
+     .box {
       position: relative;
       padding: 30px;
       background-color: #140000;
@@ -52,11 +51,98 @@
       box-shadow: 0 0 15px #440000;
       border-radius: 10px;
     }
-    .box h2 {
+  */
+
+.alternating-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.box-wrapper {
+  padding: 40px; /* 背景の余白 */
+  display: flex;
+  width: 100%;
+    max-width: 1820px; /* 最大幅を決めて */
+  margin: 0 auto;    /* 左右中央寄せ */
+  align-items: flex-start; /* 高さ揃えない */
+}
+
+.box-wrapper.left {
+  justify-content: flex-start;
+}
+
+.box-wrapper.right {
+  justify-content: flex-end;
+}
+
+/* 背景をクラスで分ける
+url('ファイルパスまたは画像URL') で画像を指定
+
+no-repeat は画像を繰り返さない設定
+
+center center は画像の表示位置を中央に設定
+
+background-size: cover; で領域いっぱいに画像を拡大縮小して表示
+
+
+.bg1 {
+  background: url('path/to/your-image1.jpg') no-repeat center center;
+  background-size: cover;  
+}
+
+.bg2 {
+  background: url('path/to/your-image1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.bg3 {
+  background: url('画像名') no-repeat center center;
+  background-size: cover;
+}*/
+
+.bg1 {
+  background:  url('募集bg1.png') no-repeat center center;
+  background-size: cover;
+}
+
+.bg2 {
+   background: url('募集bg2.png') no-repeat center center;
+  background-size: cover;
+}
+
+.bg3 {
+ background: url('募集bg3.png') no-repeat center center;
+  background-size: cover; 
+}
+.bg4 {
+  background: url('募集bg4.png') no-repeat center center;
+  background-size: cover; 
+}
+.bg5 { 
+  background: url('募集bg5.png') no-repeat center center;
+  background-size: cover; 
+} 
+.box {
+  text-align: center;
+  width: 600px;  /* 好きな幅でOK */
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(20, 0, 0, 0.85);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  color: #fff;
+}
+
+.box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+    /*.box h2 {
       font-size: 28px;
       color: #ff7f7f;
       margin-bottom: 20px;
-    }
+    }*/
     .box p, .box ul {
       font-size: 16px;
       line-height: 1.8;
@@ -106,9 +192,34 @@
       height: 540px;
       border: 2px solid #ffe25f;
     }
+
+    header nav a {
+      color: #fff;                    /* 白色テキスト */
+      margin: 0 15px;                 /* 左右の余白 */
+      text-decoration: none;         /* 下線なし */
+      font-weight: bold;             /* 太字 */
+      font-size: 18px;               /* フォントサイズ */
+      transition: all 0.3s ease;     /* ホバー時のアニメーション */
+    }
+
+/* ホバー時のスタイル */
+    header nav a:hover {
+     color: #00bfff;                /* 水色に変化 */
+     text-shadow: 0 0 8px #00bfff;  /* 光るようなテキストシャドウ */
+     text-decoration: underline;    /* 下線（必要に応じて削除可能） */
+    }
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="../index.html">ホーム</a>
+    <a href="募集ページ.html">HNS選手募集</a>
+    <a href="../応募フォーム/apply.html">応募フォーム</a>
+    <a href="https://x.com/hands__lol">X(旧Twitter)</a>
+    <a href="../チャンピオン一覧/champions.html">チャンピオン一覧</a>
+  </nav>
+
   <header>
     <div class="logo" style="display: flex; align-items: center; gap: 10px;">
       <img src="../home/Hnslogo.png" alt="Logo">
@@ -138,7 +249,7 @@
     </div>
   </div>
 
-  <div class="section">
+   <div class="box-wrapper left bg3">
     <div class="box">
       <h2>【活動方針】</h2>
       <p>私たちは、ただのアマチュアチームではありません。<br>
@@ -147,8 +258,10 @@
       「本気で戦いたい」「夢を現実に変えたい」<br>
       ―<em>そんなあなたの参加を、心からお待ちしています</em>―</p>
     </div>
+  </div>
 
-    <div class="box">
+   <div class="box-wrapper right bg1">
+    <div class="box right">
       <h2>【活動内容】</h2>
       <ul>
         <li>メイン練習：基本的に毎日 21:00〜24:00</li>
@@ -165,7 +278,9 @@
       </ul>
       <p>▶ <a href="https://www.youtube.com/channel/UCvNhG0T4FP0B5z7Nbg0gbjA" target="_blank">YouTubeチャンネルはこちら</a></p>
     </div>
+   </div>
 
+  <div class="box-wrapper left bg2">
     <div class="box">
       <h2>【応募資格】</h2>
       <ul>
@@ -178,7 +293,9 @@
         </li>
       </ul>
     </div>
+  </div>
 
+  <div class="box-wrapper right bg6">
     <div class="box">
       <h2>【応募方法】</h2>
       <p>
@@ -190,7 +307,8 @@
         ▶ <a href="../応募フォーム/apply.html" class="apply-button" target="_blank">応募フォームはこちら</a>
       </p>
     </div>
-
+  </div>
+  <div class="box-wrapper left bg7"> 
     <div class="box">
       <h2>【コーチングについて】</h2>
       <p>
