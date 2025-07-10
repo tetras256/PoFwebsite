@@ -114,15 +114,12 @@
       box-shadow: 0 0 20px #00bfff;
     }
 
-   .role-box h3 {
-  font-size: 26px;
-  color: #c0c0c0; /* シルバー基本色 */
-  margin-bottom: 25px;
-  text-shadow:
-    0 0 5px #c0c0c0,
-    0 0 10px #aaaaaa,
-    0 0 15px #888888;
-}
+     .role-box h3 {
+     font-size: 26px;
+     color: #ffffff; /* シルバー基本色 */
+     margin-bottom: 25px;
+     text-shadow:
+     }
 
     .slider {
       width: 100%;
@@ -158,7 +155,7 @@
 .player-name {
   margin-top: 12px;
   color: #ffd700; /* ゴールドの基本色 */
-  font-size: 1.5rem;
+  font-size: 25px;
   font-weight: bold;
   text-shadow:
     0 0 5px #ffd700,
@@ -286,6 +283,7 @@
 
   .practiceSwiper .swiper-slide {
     width: 600px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;

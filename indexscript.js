@@ -45,6 +45,43 @@
     
   });
 
+
+ document.addEventListener("DOMContentLoaded", () => {
+  const apiKey = "AIzaSyDIr80lvkvFZZsaqUtl2Qw9JIby7SSKd4o"; // APIキー
+  const channelId = "UCvNhG0T4FP0B5z7Nbg0gbjA";
+  const maxResults = 6;
+
+  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=${maxResults}&order=date&type=video&key=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      const container = document.querySelector(".practiceSwiper .swiper-wrapper");
+      data.items.forEach(item => {
+        const videoId = item.id.videoId;
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+        slide.innerHTML = `
+          <div class="youtube-container">
+            <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>`;
+        container.appendChild(slide);
+      });
+
+      // Swiperの初期化（取得後に実行）
+      new Swiper(".practiceSwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        loop: true
+      });
+    });
+});
+
+
+console.log("videoId:", videoId); // 動画IDが取得できてるか確認
+console.log("slide:", slide);     // 要素構築できてるか
   
 });
 
