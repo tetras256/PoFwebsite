@@ -24,13 +24,12 @@
     }
 
     .main-title {
-      font-size: 75px;
-      color: #ffe25f;
-      letter-spacing: 2px;
+      font-size: 64px;
+      color: #ff4d4d;
       font-weight: bold;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      text-align: center;
+      margin: 24px 0;
+      text-shadow: 0 0 10px #ff0000;
     }
     
  .video-wrapper{
@@ -39,7 +38,7 @@
   align-items: center;           /* 垂直方向も中央揃え */
   gap: 24px;                     /* 要素間の余白（お好みで）   */
   flex-wrap: wrap;               /* 画面が狭いとき折り返すなら */
-  margin-top: 4cm; /* 高さ */
+  margin-top: 24px; /* 高さ */
      }
 
     /* YouTube動画＋アイコン横並び */
@@ -48,9 +47,6 @@
   max-width: 1280px; /* 必要に応じて幅の上限を指定 */
   height: 720px; /* 16:9の高さ */
 }
-
-
-
 
 .side-img.left {
   margin-right: 24px; /* ← 動画との間にスペース */
@@ -85,29 +81,78 @@
   border-radius: 0px;
 }
 
-.section {
+/* .section {
   max-width: 1000px; /* 1080px × 1.25倍 */
-  margin: 0 auto;
+  /* margin: 0 auto;
   padding: 60 20px;
+} */
+.alternating-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* テキストボックスの最大幅も増やす場合はここを調整 */
+.box-wrapper {
+  padding: 40px;
+  display: flex;
+  width: 100%;
+  max-width: 4096px;
+  margin: 0 auto;
+  align-items: flex-start;
+
+  height: 960px;        /* 固定の高さ */
+  /* または */
+  min-height: 960px;    /* 最低限の高さを確保 */
+  max-height: 960px;    /* 最大の高さを制限 */
+}
+
+.box-wrapper.left {
+  justify-content: flex-start;
+}
+
+.box-wrapper.right {
+  justify-content: flex-end;
+}
+
+.bg1 {
+  background:  url('募集bg1.png') no-repeat center center;
+  background-size: cover;
+}
+
+.bg2 {
+   background: url('募集bg2.png') no-repeat center center;
+  background-size: cover;
+}
+
+.bg3 {
+ background: url('募集bg3.png') no-repeat center center;
+  background-size: cover; 
+}
+.bg4 {
+  background: url('募集bg4.png') no-repeat center center;
+  background-size: cover; 
+}
+.bg5 { 
+  background: url('募集bg5.png') no-repeat center center;
+  background-size: cover; 
+} 
+
 .box {
-  max-width: 1350px; /* 全体と合わせる */
-  margin: 30px auto;
-  padding: 20px 25px;
-  /* それ以外のスタイルはそのまま */
-    position: relative;
-      background-color: #000;
-      padding: 40px 30px; /* 上下40px、左右30px */
-      margin: 60px auto;
-      color: #d0d9e6;
-      line-height: 1.7;
-      font-size: 1.1em;
-      font-weight: 500;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
+  position: relative;
+  padding: 30px;
+  background-color: #140000;
+  border-left: 6px solid #ff4d4d;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px #440000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+    .box ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    } 
 
     .box h2, .box h3 {
       color: #a3c0ff;
@@ -128,11 +173,6 @@
       margin-bottom: 15px;
     }
 
-    .box ul {
-      padding-left: 20px;
-      list-style: disc;
-    }
-
     .box a {
       color: #74a0ff;
       text-decoration: underline;
@@ -140,18 +180,6 @@
 
     .box a:hover {
       color: #ffe25f;
-    }
-
-    /* 背景画像共通設定 */
-    .box-bg-image {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      height: auto;
-      opacity: 0.15;
-      pointer-events: none;
-      user-select: none;
-      z-index: 1;
     }
 
     /* テキストを背景画像の上に表示するため */
@@ -203,3 +231,45 @@
      nav a:hover {
      text-decoration: underline;
      }
+
+     .box-wrapper dg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay-video dg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 300px;   /* 動画の幅 */
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.box-wrapper.right .overlay-video {
+  left: auto;
+  right: 0;
+}
+
+.overlay-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.box dg {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+}

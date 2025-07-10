@@ -116,9 +116,8 @@
 
      .role-box h3 {
      font-size: 26px;
-     color: #ffffff; /* シルバー基本色 */
+     color: #ffffff; 
      margin-bottom: 25px;
-     text-shadow:
      }
 
     .slider {
@@ -282,6 +281,7 @@
   }
 
   .practiceSwiper .swiper-slide {
+    height: 450px;
     width: 600px;
     display: flex;
     justify-content: center;

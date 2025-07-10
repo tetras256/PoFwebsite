@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HNS LJL選手募集</title>
-  <link rel="stylesheet" href="../コーチング/coach.css">
+  <link rel="stylesheet" href="appstyle.css">
+  
   <style>
-    body {
+    /*body {
       margin: 0;
       background: linear-gradient(0deg, #d3d3d3, #000);
       color: #fff;
       font-family: 'Arial', sans-serif;
       font-size: 16px;
     }
+    
     header {
       background: #111;
       display: flex;
@@ -22,6 +24,7 @@
       justify-content: space-between;
       box-shadow: 0 0 10px #ff0000aa;
     }
+
     header img {
       height: 80px;
       z-index: 2;
@@ -31,9 +34,10 @@
       color: #ff4d4d;
       font-weight: bold;
       text-align: center;
-      margin: 40px 0;
+      margin: 130px 0;
       text-shadow: 0 0 10px #ff0000;
     }
+    
     /*.section {
       max-width: 1200px;
       margin: auto;
@@ -53,28 +57,21 @@
     }
   */
 
-.alternating-section {
+/*.alternating-section {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.box-wrapper {
+/*.box-wrapper {
   padding: 40px; /* 背景の余白 */
-  display: flex;
-  width: 100%;
-    max-width: 1820px; /* 最大幅を決めて */
-  margin: 0 auto;    /* 左右中央寄せ */
-  align-items: flex-start; /* 高さ揃えない */
-}
+ /* display: flex;*/
+ /* width: 100%;
+ /*   max-width: 1820px;*/ /* 最大幅を決めて */
+ /* margin: 0 auto;*/    /* 左右中央寄せ */
+  /*align-items: flex-start;*/ /* 高さ揃えない */
+/*}*/
 
-.box-wrapper.left {
-  justify-content: flex-start;
-}
-
-.box-wrapper.right {
-  justify-content: flex-end;
-}
 
 /* 背景をクラスで分ける
 url('ファイルパスまたは画像URL') で画像を指定
@@ -101,7 +98,7 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
   background-size: cover;
 }*/
 
-.bg1 {
+/*.bg1 {
   background:  url('募集bg1.png') no-repeat center center;
   background-size: cover;
 }
@@ -125,24 +122,33 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
 } 
 .box {
   text-align: center;
-  width: 600px;  /* 好きな幅でOK */
+  width: 600px;   好きな幅でOK 
   padding: 30px;
   border-radius: 12px;
   background: rgba(20, 0, 0, 0.85);
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
   color: #fff;
 }
+.box ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+}
+*/
+  /*.box li {*/
+  /* 必要なら行間などを微調整 
+  line-height: 1.8;
+}
 
 .box h2 {
   font-size: 28px;
   margin-bottom: 15px;
-}
-
+}   */
     /*.box h2 {
       font-size: 28px;
       color: #ff7f7f;
       margin-bottom: 20px;
-    }*/
+    }
     .box p, .box ul {
       font-size: 16px;
       line-height: 1.8;
@@ -192,45 +198,29 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
       height: 540px;
       border: 2px solid #ffe25f;
     }
-
-    header nav a {
-      color: #fff;                    /* 白色テキスト */
-      margin: 0 15px;                 /* 左右の余白 */
-      text-decoration: none;         /* 下線なし */
-      font-weight: bold;             /* 太字 */
-      font-size: 18px;               /* フォントサイズ */
-      transition: all 0.3s ease;     /* ホバー時のアニメーション */
-    }
-
-/* ホバー時のスタイル */
-    header nav a:hover {
-     color: #00bfff;                /* 水色に変化 */
-     text-shadow: 0 0 8px #00bfff;  /* 光るようなテキストシャドウ */
-     text-decoration: underline;    /* 下線（必要に応じて削除可能） */
-    }
+    
+  </style>  */
+  
   </style>
 </head>
 <body>
-
+<header>
+ <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+  <img src="home/Hnslogo.png" alt="Logo" style="height:80px;">
+  <a href="選手募集/募集ページ.html" style="font-size: 24px; font-weight: bold; color: white; text-decoration: none;">
+    HANDS Esports
+  </a>
+</div>
   <nav>
-    <a href="../index.html">ホーム</a>
-    <a href="募集ページ.html">HNS選手募集</a>
-    <a href="../応募フォーム/apply.html">応募フォーム</a>
+    <a href="index.html">ホーム</a>
+    <a href="選手募集/募集ページ.html">HNS選手募集</a>
+    <a href="応募フォーム/apply.html">応募フォーム</a>
     <a href="https://x.com/hands__lol">X(旧Twitter)</a>
-    <a href="../チャンピオン一覧/champions.html">チャンピオン一覧</a>
+    <a href="チャンピオン一覧/champions.html">チャンピオン一覧</a>
   </nav>
-
-  <header>
-    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-      <img src="../home/Hnslogo.png" alt="Logo">
-      <a href="../index.html" style="font-size: 24px; font-weight: bold; color: white; text-decoration: none;">
-        HANDS Esports
-      </a>
-    </div>
-  </header>
+</header>
 
   <div class="main-title">HNS LJL選手募集</div>
-
   <div class="video-wrapper">
     <div class="side-img left">
       <img src="トロフィー.png" alt="トロフィーアイコン" />
@@ -249,8 +239,11 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
     </div>
   </div>
 
-   <div class="box-wrapper left bg3">
-    <div class="box">
+   <div class="box-wrapper right bg2">
+  <div class="overlay-video">
+    <video src="a.mp4" autoplay muted loop playsinline></video>
+  </div>
+  <div class="box">
       <h2>【活動方針】</h2>
       <p>私たちは、ただのアマチュアチームではありません。<br>
       <strong style="color: #ff6666; font-size: 18px;">2026年のLJL出場、そしてプロシーンでの活躍</strong>を本気で目指しています。<br>
@@ -260,14 +253,14 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
     </div>
   </div>
 
-   <div class="box-wrapper right bg1">
+   <div class="box-wrapper right bg2">
     <div class="box right">
       <h2>【活動内容】</h2>
       <ul>
         <li>メイン練習：基本的に毎日 21:00〜24:00</li>
         <li>最低参加：週4回以上必須</li>
-        <li>練習例：
-          <ul>
+          <p style="margin: 10px 0 5px; font-weight: bold; font-size: 16px;">練習例：</p>
+            <ul>
             <li>21:00〜 HTML作成/知識共有</li>
             <li>22:00〜 メタ練習</li>
             <li>23:00〜 フレックスランク → 練習終了後フィードバック</li>
@@ -280,7 +273,7 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
     </div>
    </div>
 
-  <div class="box-wrapper left bg2">
+  <div class="box-wrapper left bg3">
     <div class="box">
       <h2>【応募資格】</h2>
       <ul>
@@ -295,7 +288,7 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
     </div>
   </div>
 
-  <div class="box-wrapper right bg6">
+  <div class="box-wrapper right bg4">
     <div class="box">
       <h2>【応募方法】</h2>
       <p>
@@ -308,11 +301,14 @@ background-size: cover; で領域いっぱいに画像を拡大縮小して表�
       </p>
     </div>
   </div>
-  <div class="box-wrapper left bg7"> 
+  <div class="box-wrapper left bg5"> 
     <div class="box">
       <h2>【コーチングについて】</h2>
       <p>
         チーム方針を深く理解するためには、コーチ（りす）による指導内容の理解が不可欠です。<br>
+        チームの一員として、チームをより良くして行くために全員で考え全員で協力し合います。<br>
+        このホームページは知識も何も無い０から作りました。
+        そのように０から１を産み出せるチームのメンバーを募集しています。<br>
         以下のリンクから<strong>「コーチング10カ条」</strong>をご覧いただき、応募前に熟読してください。
       </p>
       <p>
