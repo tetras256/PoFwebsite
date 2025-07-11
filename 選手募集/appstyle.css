@@ -313,14 +313,15 @@ nav a:hover {
 }
 
 .rank-highlight {
-  background: radial-gradient(circle, #8ceaea, #469da7, #1a7eba, #002d3d);
+  background: radial-gradient(circle, #a8edea, #7ec8c0, #3bb78f, #0bab64); /* エメラルド系 */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 33px;
+}
 
   /* 控えめな文字縁取りに変更（色を薄める or 影をぼかす） */
-  text-shadow:
+  text-shadow:{ 
     0 0 1px #2566ba,
     0 0 2px #2566ba;
 }
