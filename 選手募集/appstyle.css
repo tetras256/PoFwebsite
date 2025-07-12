@@ -1,151 +1,193 @@
-/* =========================
-   Reset & Base
-========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
+/* === 全体設定 === */
+body {
   margin: 0;
-  padding: 0;
-  background: #000;
+  background-color: #000;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
 }
 
-/* =========================
-   Header
-========================= */
+/* === ヘッダー === */
 header {
   background: #111;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 20px clamp(16px, 4vw, 48px);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 header img {
   height: 80px;
+  z-index: 2;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+header nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #00bfff;
+  text-shadow: 0 0 8px #00bfff;
+  transition: all 0.3s ease;
 }
 
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
+  margin-right: 20px;
   font-weight: bold;
   font-size: 18px;
-  transition: color .25s;
 }
 
 nav a:hover {
-  color: #00bfff;
-  text-shadow: 0 0 8px #00bfff;
+  text-decoration: underline;
 }
 
-/* =========================
-   Title
-========================= */
+/* === タイトル === */
 .main-title {
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: 64px;
   color: #ff4d4d;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
   margin: 24px 0;
   text-shadow: 0 0 10px #ff0000;
 }
 
-/* =========================
-   Video ­Section
-========================= */
+/* === 動画セクション === */
 .video-wrapper {
-  position: relative;
+  position: relative; /* 子要素を基準に絶対位置を使えるようにする */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  gap: 2% ;
+  margin-top: 2%;
+}
+
+.video-wrapper iframe,
+.main-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 .main-video {
   position: relative;
   width: 100%;
-  max-width: 1280px;
-  aspect-ratio: 16/9;
+  max-width: 62%; /* 7/12動画サイズ調整完了 */
+  aspect-ratio: 16 / 9;
+  margin: auto;
 }
 
-.main-video iframe {
+.video-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  z-index: 2; /* iframeより上に */
+  background: transparent; /* 見た目は透明だが操作をブロック */
 }
 
-/* trophy images */
-.side-img {
+.side-img.left,
+.side-img.right {
   position: absolute;
   top: 60%;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 2; /* iframeより前に表示 */
 }
 
-.side-img.left  { left: 40px; }
-.side-img.right { right: 40px; }
+.side-img.left {
+left: 2vw /*5vw;  必要なら調整（例：left: 20px） */
+}
 
-.side-img img {
-  width: 240px;
-  max-width: 25vw;
+.side-img.right {
+ right: 2vw /*5vw; こちらも調整可 */
+}
+
+.side-img.left img,
+.side-img.right img {
+  width: 15vw;
   height: auto;
-  background: #000;
-  padding-bottom: 30px;
+  padding-bottom:2vw;
+  background-color: #000;
+  box-sizing: border-box;
 }
 
-/* =========================
-   Activity Section (generic)
-========================= */
+/* === セクション背景 === */
 .activity-section {
   position: relative;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
-  padding: 40px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  padding: 0; /* ← 不要な余白をなくす */
+  margin: 0;
+  box-sizing: border-box;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden; /* ← ギリギリまでカット */
 }
 
-.activity-section__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1600px;
+/* 背景画像設定（ここが統合部分） */
+.activity-section.bg1 {
+  background-image: url('募集bg1.png');
+  height: 70vh;
 }
+
+.activity-section.bg2 {
+  background-image: url('募集bg2.png');
+  padding-top: 2%;
+  height: 75vh;
+}
+
+.activity-section.bg3 {
+  background-image: url('募集bg3.png');
+  height: 30vh;
+  padding-top: 1%;
+}
+
+.activity-section.bg4 {
+  background-image: url('募集bg4.png');
+  height: 30vh;
+}
+
+.activity-section.bg5 {
+  background-image: url('募集bg5.png');
+  height: 30vh;
+}
+
+
+/* テキストを左寄せ・中央垂直配置 */
+/* .activity-section__text {
+  position: absolute;
+  top: 50%;
+  left: 250px;  /* 調整可能 */
+ /*  transform: translateY(-50%);
+  width: 40%;
+  max-width: 500px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;  /* 中央寄せ */
+/* }*/
 
 .activity-section__text {
-  flex: 1 1 400px;
-  max-width: 600px;
-  text-align: center;
-  font-size: 22px;
+  width: 40vw;
+  max-width: 100%;
+  color: #fff;
+  font-size: 1.2vw;
+  text-align: center; /* 左寄せ */
+  position: static; /* これで絶対配置解除 */
+  margin: 0; /* 必要なら調整 */
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transform: translateY(2vw);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  position: relative;
+  z-index: 2; /* テキストを前面に表示 */
 }
 
 .activity-section__text.visible {
@@ -154,127 +196,202 @@ nav a:hover {
 }
 
 .activity-section__text h2 {
-  font-size: 2.8rem;
-  margin-bottom: 16px;
+  font-size: 2.8vw;
+  font-weight: 700;
+  margin-bottom: 1vw;
+  color: #fff;
   position: relative;
 }
 
-/* glowing headline */
-.glow-text {
+/* 光るタイトル */
+.activity-section__text h2.glow-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2vw;
   text-shadow:
-    0 0 6px rgba(255,255,255,.6),
-    0 0 9px rgba(255,255,255,.4),
-    0 0 12px rgba(255,255,255,.2);
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 9px rgba(255, 255, 255, 0.4),
+    0 0 12px rgba(255, 255, 255, 0.2);
 }
 
-.glow-text::after {
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-8px;
-  width:100%;
-  height:3px;
-  border-radius:2px;
-  background:linear-gradient(90deg,#ff4d4d,#ff9999,#ff4d4d);
-  background-size:200% 100%;
-  animation:flow-line 3s linear infinite;
-}
-
-/* section video */
-.activity-section__video {
-  flex: 1 1 500px;
-  max-width: 100%;
-  display:flex;
-  justify-content:center;
-}
-
-.activity-section__video video {
+.activi
+ty-section__text h2.glow-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  border-radius: 8px;
-  border:none;
+  height: 3px;
+  background: linear-gradient(90deg, #ff4d4d, #ff9999, #ff4d4d);
+  background-size: 200% 100%;
+  animation: flow-line 3s linear infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 77, 77, 0.7);
+  z-index: 10;
 }
 
-/* section backgrounds */
-.activity-section.bg1 { background-image:url('募集bg1.png'); }
-.activity-section.bg2 { background-image:url('募集bg2.png'); }
-.activity-section.bg3 { background-image:url('募集bg3.png'); }
-.activity-section.bg4 { background-image:url('募集bg4.png'); }
-.activity-section.bg5 { background-image:url('募集bg5.png'); }
 
-/* =========================
-   Buttons
-========================= */
+.activity-section__container {
+  display: flex;
+  position: relative;        /* ✅追加 → 中の絶対配置要素の基準にする */
+  align-items: center;
+  justify-content: space-between;  /* ← ここ！ */
+  gap: 3vw;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 90%;                      /* ← 中央寄せするなら必要 */
+  margin: 20px;                   /* ← 真ん中に配置 */
+  z-index: 1;
+  flex-direction: row;
+  overflow: hidden; /* ← はみ出す要素をカット */
+}
+
+/* ドラゴン */
+.activity-section__video {
+  position: absolute;
+  width: 70vw;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;  /* 背面に回す */
+  transition: transform 0.3s ease;
+ }
+
+
+ /* ドラゴンのsize調整 */
+ .activity-section.bg1 .activity-section__video video {
+  width: 70vw;   /* bg1の動画の幅 */
+  height: auto;  /* 自動調整 */
+}
+
+ .activity-section.bg2 .activity-section__video video {
+  width: 56vw;   /* bg1の動画の幅 */
+  height: auto;  /* 自動調整 */
+}
+
+ .activity-section.bg3 .activity-section__video video {
+  width: 75vw;   /* bg3の動画の幅 */
+  height: auto;  /* 自動調整 */
+  margin-left: 8vw;
+}
+
+ .activity-section.bg4 .activity-section__video video {
+  width: 62vw;   /* bg4の動画の幅 */
+  height: auto;  /* 自動調整 */
+}
+
+ .activity-section.bg5 .activity-section__video video {
+  width: 65vw;   /* bg5の動画の幅 */
+  height: auto;  /* 自動調整 */
+}
+
+
+
+.activity-section.left .activity-section__video {
+  margin-left: 33vw;  /* 右寄せ */
+  margin-right: auto;  /* 画面幅の5%分の余白 */
+}
+
+.activity-section.right .activity-section__video {
+  margin-right: 28vw; /* 左寄せ */
+  margin-left: auto;  /* 画面幅の5%分の余白 */
+}
+
+
+
+/*【現状使用している状況が見えない。問題がある場合はコメントアウトを消す】
+/*.activity-section__video video {
+/*  width: 100%;       /* コンテナいっぱいに広げる */
+/*  height: 100%;
+/*  aspect-ratio: 16 / 9;
+/*  object-fit: cover;
+/*  border: none;
+/*  border-radius: 0.5vw /* 角を少し丸く（任意） */
+/*}
+
+
+/* アニメーションキーフレーム */
+@keyframes flow-line {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 応募ボタン */
 .apply-btn {
-  display:inline-block;
-  padding: 14px 60px;
-  margin-top: 24px;
-  min-width: 240px;
-  font-size:20px;
-  font-weight:700;
-  color:#fff;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:1.2px;
-  background:linear-gradient(90deg,#2575fc 0%,#6a11cb 100%);
-  border:3px solid #2575fc;
-  border-radius:4px;
-  box-shadow:0 4px 12px rgba(37,117,252,.6);
-  cursor:pointer;
-  transition:all .25s;
-  user-select:none;
+  position: relative; /* 背景動画を絶対位置で配置するための基準に */
+  z-index: 1;
+  margin: 20px auto 0 auto;
+  display: inline-block;
+  padding: 1.2vw 5vw;     /* 横幅を広げる */
+  font-size: 1.6vw;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+  border: 3px solid #2575fc;
+  border-radius: 4px;  /* 角は少しだけ丸く */
+  box-shadow: 0 4px 12px rgba(37, 117, 252, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  user-select: none;
+  min-width: 20%;   /* 最低幅を確保 */
+  text-align: center;
 }
 
-.apply-btn:hover{
-  background:linear-gradient(90deg,#6a11cb 0%,#2575fc 100%);
-  border-color:#6a11cb;
-  box-shadow:0 6px 18px rgba(106,17,203,.8);
-  transform:translateY(-3px);
+.activity-section.right .apply-btn {
+  margin-left: 0.4%;
+  margin-right: auto;
 }
 
-/* =========================
-   Rank Highlight
-========================= */
-.rank-highlight{
-  background:radial-gradient(circle,#a8edea,#7ec8c0,#3bb78f,#0bab64);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  font-weight:bold;
-  font-size:33px;
-  text-shadow:
-    0 0 1px #2566ba,
-    0 0 2px #2566ba;
+.apply-btn:hover {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  border-color: #6a11cb;
+  box-shadow: 0 6px 18px rgba(106, 17, 203, 0.8);
+  transform: translateY(-3px);
 }
 
-/* =========================
-   Animations
-========================= */
-@keyframes flow-line{
-  0%{background-position:200% 0;}
-  100%{background-position:-200% 0;}
+/* 文章の位置調整等 */
+.activity-section.left .activity-section__container {
+  flex-direction: row;
 }
 
-/* =========================
-   Responsive Tweaks
-========================= */
-@media (max-width: 1024px){
-  .side-img{display:none;}            /* trophy images hide */
-  .activity-section__text{font-size:20px;}
+.activity-section.right .activity-section__container {
+  flex-direction: row-reverse;
 }
 
-@media (max-width: 768px){
-  nav a{font-size:16px;}
-  .main-video{max-width:100%;}
-  .activity-section__text,
-  .activity-section__video{flex:1 1 100%;}
-  .activity-section__text{margin:0;}
-  .apply-btn{min-width:200px;font-size:18px;}
+.activity-section__text {
+  width: 40%;
+  max-width: 40%;
+}*
+
+ .activity-section.left .activity-section__text {
+  margin-left: 5%; /* 約2cm */
+ }
+
+.activity-section.right .activity-section__text {
+  margin-right: 2%; /* 200px左に移動 */
 }
 
-@media (max-width: 480px){
-  header img{height:60px;}
-  .main-title{font-size:36px;}
-  .activity-section{padding:32px 4%;}
+.rank-highlight {
+  background: radial-gradient(circle, #a8edea, #7ec8c0, #3bb78f, #0bab64); /* エメラルド系 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 2vw;
 }
+
+
+
+
+
+
+
