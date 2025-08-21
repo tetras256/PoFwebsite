@@ -1,0 +1,3 @@
+images/jungle1.png
+images/jungle2.png
+images/jungle3.png

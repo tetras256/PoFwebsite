@@ -7,23 +7,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HNS official</title>
+  <title>Pof official</title>
   <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
 
 <header>
  <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-  <img src="home/Hnslogo.png" alt="Logo" style="height:80px;">
+  <img src="home/Hnslogo.jpg" alt="Logo" style="height:80px;">
   <a href="選手募集/募集ページ.html" style="font-size: 24px; font-weight: bold; color: white; text-decoration: none;">
-    HANDS Esports
+    Palm of fate
   </a>
 </div>
   <nav>
     <a href="index.html">ホーム</a>
-    <a href="選手募集/募集ページ.html">HNS選手募集</a>
+    <a href="選手募集/募集ページ.html">PoF選手募集</a>
     <a href="応募フォーム/apply.html">応募フォーム</a>
     <a href="https://x.com/hands__lol">X(旧Twitter)</a>
+    <a href="../各レーンメモ/メモ.html">各レーンメモ</a>
     <a href="チャンピオン一覧/champions.html">チャンピオン一覧</a>
   </nav>
   
@@ -126,10 +127,6 @@
       <h3>ADC</h3>
       <div class="slider">
         <div class="slides">
-           <div class="slide-item">
-          <img src="home/hasiru.png" alt="ADC 1">
-          <p class="player-name">ハシル</p>
-          </div>
           <div class="slide-item">
           <img src="選手募集/yuki.png" alt="ADC 2">
           <p class="player-name">ゆき</p>
@@ -170,7 +167,7 @@
 
 <section class="section" style="overflow: hidden; background-color: #0a1428;">
   <h2 class="champion-link-title">
-   <a href="champions.html">チャンピオン解説</a>
+   <a href="チャンピオン一覧/champions.html">チャンピオン解説</a>
   </h2>
   <div class="flow-container">
     <div class="flow-track">
@@ -304,7 +301,7 @@
 
 <footer>
 
-  <p>© 2025 HNS Esports Co. ALL RIGHTS RESERVED.</p> <!-- ←ここ：著作権表記 -->
+  <p>© 2025 Palm of fate Co. ALL RIGHTS RESERVED.</p> <!-- ←ここ：著作権表記 -->
   <div>
     <a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">Contact</a> <!-- ←ここ：リンク先 -->
   </div>
@@ -320,6 +317,15 @@
 
 
 <script src="js/indexscript.js"></script> <!-- パスは環境に合わせて調整 -->
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>

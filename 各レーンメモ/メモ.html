@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>LoL 各レーンメモ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ホームに戻るボタン -->
+  <div class="home-button-wrapper">
+    <a href="index.html" class="home-button">ホームに戻る</a>
+  </div>
+
+  <h1>📝 LoL 各レーンメモ</h1>
+
+  <!-- タブ切り替えボタン -->
+  <div class="tab-buttons">
+    <button class="tab-button active" data-target="top">トップ</button>
+    <button class="tab-button" data-target="jungle">ジャングル</button>
+    <button class="tab-button" data-target="mid">ミッド</button>
+    <button class="tab-button" data-target="adc">ADC</button>
+    <button class="tab-button" data-target="support">サポート</button>
+  </div>
+
+  <!-- 各メモ -->
+  <div id="top" class="lane active">
+    <h2>トップ</h2>
+    <textarea placeholder="例: タンク系多め。レーン主導権でTP使いどころ注意。"></textarea>
+
+    <label>
+    画像を選択:
+    <input type="file" accept="image/*" class="image-input" multiple>
+  </label>
+
+  <div class="image-preview"></div>
+
+  </div>
+
+  <div id="jungle" class="lane">
+    <h2>ジャングル</h2>
+    <textarea placeholder="例: ガンクタイミング、敵JG位置予測、リードルート。"></textarea>
+
+    <label>
+    画像を選択:
+    <input type="file" accept="image/*" class="image-input" multiple>
+
+  </label>
+
+  <div class="image-preview"></div>
+
+  </div>
+
+  <div id="mid" class="lane">
+    <h2>ミッド</h2>
+    <textarea placeholder="例: ローム、視界取り、キャッチ意識など。"></textarea>
+
+    <label>
+    画像を選択:
+    <input type="file" accept="image/*" class="image-input" multiple>
+  </label>
+
+  <div class="image-preview"></div>
+
+  </div>
+
+  <div id="adc" class="lane">
+    <h2>ADC（ボット）</h2>
+    <textarea placeholder="例: 相手サポートに合わせて立ち位置調整。CS意識高く。"></textarea>
+
+  <label>
+    画像を選択:
+    <input type="file" accept="image/*" class="image-input" multiple>
+
+  </label>
+
+  <div class="image-preview"></div>
+  </div>
+
+  <div id="support" class="lane">
+    <h2>サポート</h2>
+    <textarea placeholder="例: ワード管理、ADCの位置に合わせたローム判断。"></textarea>
+
+      <label>
+    画像を選択:
+    <input type="file" accept="image/*" class="image-input" multiple>
+  </label>
+
+  <div class="image-preview"></div>
+  
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

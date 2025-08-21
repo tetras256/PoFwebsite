@@ -390,6 +390,60 @@ ty-section__text h2.glow-text::after {
 }
 
 
+/* PCサイズでは非表示 */
+#menu-toggle {
+  display: none;
+}
+
+/* スマホサイズ用 */
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    background-color: #111;
+    position: relative;
+  }
+
+  header img {
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  #menu-toggle {
+    display: block; /* ← スマホで表示 */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: auto; /* 左側に寄せる */
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    z-index: 1000;
+    padding: 10px 20px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}
 
 
 

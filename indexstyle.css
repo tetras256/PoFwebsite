@@ -398,3 +398,289 @@
   background-position: center; /* 中央寄せ */
   background-repeat: no-repeat; /* 繰り返しなし */
 }
+
+/* ================================
+   スマホ表示用のレスポンシブCSS
+   ================================ */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  nav a {
+    margin: 5px 10px;
+    font-size: 16px;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero iframe {
+    width: 150vw;
+    height: 84.375vw; /* 16:9比率に再計算 */
+  }
+
+  .hero .text h1 {
+    font-size: 2rem;
+  }
+
+  .hero .text p {
+    font-size: 1.2rem;
+  }
+
+  .catchphrase-container {
+    flex-direction: column;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .catchphrase-text {
+    font-size: 1.8rem;
+    margin-left: 0;
+  }
+
+  .role-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .role-box {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .slide-item img {
+    height: auto;
+  }
+
+  .player-name {
+    font-size: 20px;
+  }
+
+  .flow-container {
+    height: auto;
+    overflow-x: scroll;
+  }
+
+  .flow-track {
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .flow-track img {
+    height: 100px;
+  }
+
+  .team-role-title {
+    font-size: 2.5rem;
+  }
+
+  .champion-link-title a {
+    font-size: 2.2rem;
+  }
+
+  .practiceSwiper .swiper-slide {
+    height: auto;
+    width: 100%;
+  }
+
+  .youtube-container {
+    padding-bottom: 56.25%;
+  }
+
+  footer {
+    padding: 30px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ================================
+   スマホ表示用のレスポンシブCSS
+   ================================ */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  nav a {
+    margin: 5px 10px;
+    font-size: 16px;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero iframe {
+    width: 150vw;
+    height: 84.375vw; /* 16:9比率に再計算 */
+  }
+
+  .hero .text h1 {
+    font-size: 2rem;
+  }
+
+  .hero .text p {
+    font-size: 1.2rem;
+  }
+
+  .catchphrase-container {
+    flex-direction: column;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .catchphrase-text {
+    font-size: 1.8rem;
+    margin-left: 0;
+  }
+
+  .role-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .role-box {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .slide-item img {
+    height: auto;
+  }
+
+  .player-name {
+    font-size: 20px;
+  }
+
+  .flow-container {
+    height: auto;
+    overflow-x: scroll;
+  }
+
+  .flow-track {
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .flow-track img {
+    height: 100px;
+  }
+
+  .team-role-title {
+    font-size: 2.5rem;
+  }
+
+  .champion-link-title a {
+    font-size: 2.2rem;
+  }
+
+  .practiceSwiper .swiper-slide {
+    height: auto;
+    width: 100%;
+  }
+
+  .youtube-container {
+    padding-bottom: 56.25%;
+  }
+
+  footer {
+    padding: 30px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ハンバーガーメニュー（スマホ専用） */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* スマホ用ナビメニュー非表示状態 */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    z-index: 1001;
+  }
+
+    nav {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  nav a {
+    margin: 10px 0;
+    display: block;
+    font-size: 18px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  header {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+ /* ロゴの位置を調整 */
+  header img {
+    max-width: 140px; /* スマホ用に縮小 */
+    height: auto;
+    margin: 10px 20px; /* 左上に余白を付けて位置調整 */
+  }
+
+  /* メニュー（nav）がロゴにかぶらないように調整 */
+  nav {
+    top: 60px; /* ここがロゴの高さより下になるように調整 */
+    z-index: 999; /* ロゴより前に出すならこれを上げる。下にしたいなら下げる */
+  }
+
+  /* ロゴを上に出すならこちらを強く */
+  header {
+    position: relative;
+    z-index: 1000;
+  }

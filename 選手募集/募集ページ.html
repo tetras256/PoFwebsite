@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HNS LJL選手募集</title>
+  <title>PoF LJL選手募集</title>
   <link rel="stylesheet" href="appstyle.css">
   
   <style>
@@ -11,23 +11,24 @@
 </head>
 <body>
 <header>
+  <button id="menu-toggle">☰</button>
  <div class="logo" style="display: flex; align-items: center; gap: 10px;">
   <img src="../home/Hnslogo.png" alt="Logo" style="height:80px;">
   <a href="募集ページ.html" style="font-size: 24px; font-weight: bold; color: white; text-decoration: none;">
-    HANDS Esports
   </a>
 </div>
 
   <nav>
     <a href="../index.html">ホーム</a>
-    <a href="募集ページ.html">HNS選手募集</a>
+    <a href="募集ページ.html">PoF選手募集</a>
     <a href="../応募フォーム/apply.html">応募フォーム</a>
     <a href="https://x.com/hands__lol">X(旧Twitter)</a>
+    <a href="../各レーンメモ/メモ.html">各レーンメモ</a>
     <a href="../チャンピオン一覧/champions.html">チャンピオン一覧</a>
   </nav>
 </header>
 
-  <div class="main-title">HNS LJL選手募集</div>
+  <div class="main-title">Pof LJL選手募集</div>
 <div class="video-wrapper">
   <div class="side-img left">
     <img src="トロフィー.png" alt="トロフィーアイコン" />
@@ -124,7 +125,7 @@
       <p>
         下記フォームよりご応募いただいた方には、Discrdサーバーにて順次適正診断を行います。<br>
         たくさんのご応募をお待ちしております。<br><br>
-        <strong>hands_lol.</strong> よりご連絡いたします。<br><br>
+        <strong>Palm of fate_lol.</strong> よりご連絡いたします。<br><br>
       </p>
       <button class="apply-btn" onclick="location.href='../応募フォーム/apply.html'">応募する</button>
     </div>
@@ -185,6 +186,15 @@
       checkVisible();
     });
   </script>
+
+ <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.querySelector("nav");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
